@@ -1,0 +1,91 @@
+{
+  "results": [
+    {
+      "name": "Batch-specific removal preserves other expiry quantities and original costs",
+      "passed": true
+    },
+    {
+      "name": "Batch correction rejects unidentified or insufficient affected batch",
+      "passed": true
+    },
+    {
+      "name": "Open sale keeps captured price until explicit refresh",
+      "passed": true
+    },
+    {
+      "name": "Held items retain prices and reserve units across corrections",
+      "passed": true
+    },
+    {
+      "name": "Stock duplicate receipt with changed pack size keeps one product and latest prices",
+      "passed": true
+    },
+    {
+      "name": "Fractional pack inputs remain invalid instead of silently truncating",
+      "passed": true
+    },
+    {
+      "name": "Old full backup merges permanent audit; conflicts and malformed relationships rejected",
+      "passed": true
+    },
+    {
+      "name": "Archive/remove and recycle-bin purge preserve permanent adjustment history",
+      "passed": true
+    },
+    {
+      "name": "15 Long-term stress independent quantity / price / batch / financial oracle",
+      "passed": true
+    },
+    {
+      "name": "3,600-operation data survives restart and verifies against IndexedDB",
+      "passed": true
+    }
+  ],
+  "stress": {
+    "products": 300,
+    "operations": 3600,
+    "counts": {
+      "sale": 720,
+      "purchase": 720,
+      "correction": 720,
+      "packaging": 720,
+      "pricing": 720
+    },
+    "bad": [],
+    "auditAdded": 2880,
+    "expectedEvents": 2880,
+    "salesTotal": 228834,
+    "purchaseTotal": 254863.7999999999,
+    "finance": {
+      "sales": 228834,
+      "bankOut": 254863.7999999999,
+      "cashOut": 0,
+      "unitsSold": 1440,
+      "unitsPurchased": 2160,
+      "pos": {
+        "opening": 0,
+        "electronicOpening": 0,
+        "cashIn": 0,
+        "cashOut": 0,
+        "xferIn": 0,
+        "xferOut": 0,
+        "adjIn": 0,
+        "adjOut": 0,
+        "elecIn": 0,
+        "elecOut": 0,
+        "income": 0,
+        "incomeCash": 0,
+        "incomeElec": 0,
+        "count": 0,
+        "expectedCash": 0,
+        "expectedElectronic": 0
+      }
+    },
+    "elapsedMs": 119454,
+    "p95Ms": 50.099999994039536,
+    "maxMs": 76.69999999552965,
+    "uniqueAuditIds": true,
+    "backupProducts": 300
+  },
+  "errors": []
+}

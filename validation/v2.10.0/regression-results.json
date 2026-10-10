@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "name": "Stock creation through existing UI",
+      "passed": true
+    },
+    {
+      "name": "1 Existing units -> packs with no quantity or financial movement",
+      "passed": true
+    },
+    {
+      "name": "2 Loose units / 3 Packaging correction remains financially neutral",
+      "passed": true
+    },
+    {
+      "name": "4 Bidirectional inputs and loose-unit normalization",
+      "passed": true
+    },
+    {
+      "name": "5 Exact quantity -> one coherent permanent -13 event",
+      "passed": true
+    },
+    {
+      "name": "6 & 7 Market total cost / latest prices / original acquisition costs",
+      "passed": true
+    },
+    {
+      "name": "8 Cross-desk consistency and current-cost valuation",
+      "passed": true
+    },
+    {
+      "name": "9 Retail sale deducts five base units exactly once",
+      "passed": true
+    },
+    {
+      "name": "7 Historical sale cost and price remain unchanged after repricing",
+      "passed": true
+    },
+    {
+      "name": "10 Stock correction does not affect cash, bank, supplier or POS",
+      "passed": true
+    },
+    {
+      "name": "11 Audit append-only protections and correction retention",
+      "passed": true
+    },
+    {
+      "name": "12 Full/working backups roundtrip without duplicating units or losing newer audit",
+      "passed": true
+    },
+    {
+      "name": "14 Repeated restocks adopt latest prices and retain purchase amounts",
+      "passed": true
+    },
+    {
+      "name": "16 Invalid inputs, batch selection, corrupted and conflicting backups",
+      "passed": true
+    },
+    {
+      "name": "16 Storage failure rolls back quantity, pricing, ledger and audit together",
+      "passed": true
+    },
+    {
+      "name": "16 Double submission yields exactly one committed adjustment",
+      "passed": true
+    },
+    {
+      "name": "Theme contrast and mobile layout, new history and form states",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

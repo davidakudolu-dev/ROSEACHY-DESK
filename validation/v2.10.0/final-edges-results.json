@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "name": "Historical markup snapshot prices remain stored after global defaults change",
+      "passed": true
+    },
+    {
+      "name": "Batch-specific correction survives unrelated sale edit and purchase replay",
+      "passed": true
+    },
+    {
+      "name": "Purchase edit keeps permanent adjustment record and emits correction audit",
+      "passed": true
+    },
+    {
+      "name": "Malformed batch setStock aborts before any irreversible history or quantity change",
+      "passed": true
+    },
+    {
+      "name": "Stock edit targets a selected expiry batch and retains stable IDs after rename",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "name": "Migration from actual v2.9.9 database preserves transactions and batch costs",
+      "passed": true
+    },
+    {
+      "name": "Financial PIN vault, day setup and owner review survive neutral corrections",
+      "passed": true
+    },
+    {
+      "name": "Encrypted full backup contains stock, pack configuration, audit and Financial Desk",
+      "passed": true
+    },
+    {
+      "name": "13 Production service worker caches upgraded application and reopens offline",
+      "passed": true
+    },
+    {
+      "name": "LocalStorage fallback interrupted-save journal and audit rollback",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

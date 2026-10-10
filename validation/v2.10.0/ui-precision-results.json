@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "name": "Stock pack-size representation and exact entered cost / new quantity divisor",
+      "passed": true
+    },
+    {
+      "name": "Measured text contrast >= 4.5:1 for history and correction inputs in eight theme/mode combinations",
+      "passed": true
+    },
+    {
+      "name": "Exact zero stock supported with neutral finances and complete -24 audit",
+      "passed": true
+    }
+  ],
+  "ratios": [
+    {
+      "theme": "ember",
+      "mode": "light",
+      "summary": 15.539449566553996,
+      "timestamp": 4.67341227039121,
+      "field": 13.431397340753838,
+      "fieldColor": "rgb(30, 34, 61)",
+      "fieldBackground": "rgb(255, 236, 207)",
+      "fill": "rgb(30, 34, 61)"
+    },
+    {
+      "theme": "ember",
+      "mode": "dark",
+      "summary": 15.539449566553996,
+      "timestamp": 15.539449566553996,
+      "field": 18.057624040819455,
+      "fieldColor": "rgb(255, 255, 255)",
+      "fieldBackground": "rgb(19, 21, 38)",
+      "fill": "rgb(255, 255, 255)"
+    },
+    {
+      "theme": "midnightgold",
+      "mode": "light",
+      "summary": 16.644381698996146,
+      "timestamp": 16.644381698996146,
+      "field": 16.163988533434683,
+      "fieldColor": "rgb(16, 27, 48)",
+      "fieldBackground": "color(srgb 0.98298 0.970824 0.948941)",
+      "fill": "rgb(16, 27, 48)"
+    },
+    {
+      "theme": "midnightgold",
+      "mode": "dark",
+      "summary": 16.309599867388147,
+      "timestamp": 16.309599867388147,
+      "field": 16.805217925347247,
+      "fieldColor": "rgb(248, 247, 247)",
+      "fieldBackground": "color(srgb 0.0614118 0.0899608 0.139922)",
+      "fill": "rgb(248, 247, 247)"
+    },
+    {
+      "theme": "green",
+      "mode": "light",
+      "summary": 11.983611320517493,
+      "timestamp": 5.781129078771561,
+      "field": 10.188121604687414,
+      "fieldColor": "rgb(24, 61, 50)",
+      "fieldBackground": "rgb(231, 239, 227)",
+      "fill": "rgb(24, 61, 50)"
+    },
+    {
+      "theme": "green",
+      "mode": "dark",
+      "summary": 14.064929213396312,
+      "timestamp": 8.942538725744704,
+      "field": 11.828713557777192,
+      "fieldColor": "rgb(242, 250, 242)",
+      "fieldBackground": "rgb(32, 56, 47)",
+      "fill": "rgb(242, 250, 242)"
+    },
+    {
+      "theme": "pearl",
+      "mode": "light",
+      "summary": 17.327230533884187,
+      "timestamp": 4.632677276092077,
+      "field": 15.097301851108336,
+      "fieldColor": "rgb(0, 19, 81)",
+      "fieldBackground": "rgb(235, 239, 253)",
+      "fill": "rgb(0, 19, 81)"
+    },
+    {
+      "theme": "pearl",
+      "mode": "dark",
+      "summary": 18.278589183003575,
+      "timestamp": 18.278589183003575,
+      "field": 17.895771354525774,
+      "fieldColor": "rgb(255, 255, 255)",
+      "fieldBackground": "rgb(10, 18, 64)",
+      "fill": "rgb(255, 255, 255)"
+    }
+  ],
+  "pack": {
+    "first": "2",
+    "second": "4",
+    "qty": "3",
+    "cost": 33.333333333333336,
+    "total": "100"
+  }
+}

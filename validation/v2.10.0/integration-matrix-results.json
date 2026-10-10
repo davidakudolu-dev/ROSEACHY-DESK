@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "name": "Bulk duplicate restock updates latest unit cost and explicit selling price",
+      "passed": true
+    },
+    {
+      "name": "Stock duplicate packs use a consistent transaction representation in full backups",
+      "passed": true
+    },
+    {
+      "name": "Supplier credit and bank payment are counted once; corrections preserve them and POS",
+      "passed": true
+    },
+    {
+      "name": "Quantity pricing, returns, report costs and prices retain original snapshots",
+      "passed": true
+    }
+  ],
+  "errors": []
+}
