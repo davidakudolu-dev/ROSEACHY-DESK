@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "name": "Empty-profile backup restores Finance review metadata without a configured vault",
+      "passed": true
+    },
+    {
+      "name": "Signed actual bank movements and live work survive export while viewing saved history",
+      "passed": true
+    },
+    {
+      "name": "Pending POS edit restores its original transaction identity and saves without duplication",
+      "passed": true
+    },
+    {
+      "name": "Deleted stock and deleted transactions are preserved in Full Backup and restore",
+      "passed": true
+    },
+    {
+      "name": "Encrypted Full Backup exports through the shared snapshot and restores via the normal password prompt",
+      "passed": true
+    },
+    {
+      "name": "Wrong encrypted-backup password changes no business data",
+      "passed": true
+    },
+    {
+      "name": "Pre-import recovery restores the previous empty profile, including an unconfigured Finance account",
+      "passed": true
+    },
+    {
+      "name": "Unverifiable recovery displays a persistent alert and blocks edits until reload",
+      "passed": true
+    },
+    {
+      "name": "POSEntry during an atomic save is rejected clearly while the form is retained",
+      "passed": true
+    },
+    {
+      "name": "LocalStorage fallback round-trip preserves stock, POS, notes, and accounting",
+      "passed": true
+    },
+    {
+      "name": "Real service-worker offline reload supports both export buttons and verified restore",
+      "passed": true
+    },
+    {
+      "name": "Actual browser download fallback works without the optional PWA file helper",
+      "passed": true
+    },
+    {
+      "name": "In-place database migration from v2.10.8/schema 6 preserves existing business records",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 13
+}

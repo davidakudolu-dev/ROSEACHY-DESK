@@ -1,0 +1,78 @@
+{
+  "results": [
+    {
+      "name": "Create business fixtures using existing Stock, Sales, POS and Market handlers",
+      "passed": true
+    },
+    {
+      "name": "Encrypted Financial vault, bank movement and unfinished Financial form fixture",
+      "passed": true
+    },
+    {
+      "name": "Both existing buttons export identical complete business payloads and valid checksums",
+      "passed": true
+    },
+    {
+      "name": "Restore complete backup on an empty profile through the real import-file handler",
+      "passed": true
+    },
+    {
+      "name": "Financial records and encrypted unfinished movement restore after normal PIN unlock",
+      "passed": true
+    },
+    {
+      "name": "Repeated imports replace records without duplicate sales, POS, Market purchases or notes",
+      "passed": true
+    },
+    {
+      "name": "Live unheld sale, POS input and stock adjustment are captured and restored durably",
+      "passed": true
+    },
+    {
+      "name": "Held purchase contents and captured product identity round-trip",
+      "passed": true
+    },
+    {
+      "name": "Unsaved Market purchase modal restores its values and original editing context",
+      "passed": true
+    },
+    {
+      "name": "Checksum, future format, duplicate notes, bad Market payments and invalid POS are rejected",
+      "passed": true
+    },
+    {
+      "name": "Malformed JSON import reports failure without changing any records",
+      "passed": true
+    },
+    {
+      "name": "Cancelled/file-failed exports notify correctly and re-enable both buttons",
+      "passed": true
+    },
+    {
+      "name": "Cancelled safety save leaves business records unchanged",
+      "passed": true
+    },
+    {
+      "name": "Injected IndexedDB failure rolls back and reports verified recovery",
+      "passed": true
+    },
+    {
+      "name": "Failed post-restore verification triggers checked recovery, not a false success",
+      "passed": true
+    },
+    {
+      "name": "Concurrent clicks on Sales and Settings create one export",
+      "passed": true
+    },
+    {
+      "name": "Valid legacy full backup without working fields or checksum remains supported",
+      "passed": true
+    },
+    {
+      "name": "Backup-file checker uses the same strict checksum and domain validation",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 18
+}

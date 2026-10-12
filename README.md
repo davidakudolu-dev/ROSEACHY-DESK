@@ -1,13 +1,11 @@
-# Roseachy v2.10.8
+# Roseachy v2.10.9 — Backup Integration & Repair
 
-Adaptive bottom navigation below 768px and top navigation on larger screens, retaining the original header and menu. Touch swipes follow Sales → Stock → Reports → Notes → Analytics. Desk switching stays in the top menu.
+Sales Desk and Settings Full Backup use one verified snapshot, including all supported business records and unfinished work. Restore validates integrity, replaces records without replaying transactions, and retains a verified recovery copy. Private unfinished Financial forms remain encrypted and restore after the normal PIN unlock.
 
-Built from the uploaded v2.10.7 Cloudflare PWA application. Unfinished forms, held transactions, selected products, themes, and bounded Back history are preserved. Financial Desk keeps its session during desk navigation and offers an explicit Lock control.
+[Download the complete Cloudflare ZIP](exports/Roseachy_v2_10_9_Backup_Integration_Repair_Cloudflare_PWA.zip) · [Upgrade and deployment](BACKUP_UPGRADE_v2_10_9.md) · [Validation evidence and limits](BACKUP_TEST_REPORT_v2_10_9.md)
 
-[Download the complete Cloudflare ZIP](exports/Roseachy_v2_10_8_Adaptive_Navigation_Swipe_Cloudflare_PWA.zip) · [Upgrade and deployment notes](NAVIGATION_UPGRADE_v2_10_8.md) · [Validation and device limits](NAVIGATION_TEST_REPORT_v2_10_8.md)
+Deploy the extracted ZIP contents at the Cloudflare Pages site root; no build is required. HTML, embedded CSS/JavaScript, manifest, service worker, PWA file helper, headers/redirects and all icons are included. Every original file is retained.
 
-Extract the ZIP and upload its contents to the existing Cloudflare Pages project, with index.html at the root. No build is needed. Manifest, service worker, PWA glue, headers/redirects, and every original icon are included.
+60 browser scenario groups and 10 syntax checks passed using isolated synthetic data: shared export, complete/repeated restore, encrypted Financial forms, live/held work, corruption rejection, injected storage/verification failures, safety recovery, offline service worker, fallback storage, database migration, and existing navigation/UI behavior. Physical devices and live Cloudflare deployment remain manual checks.
 
-29 browser scenario groups and 10 JavaScript syntax checks passed. Offline service-worker reload was verified. Physical Android/PWA installation, hardware Back, keyboard/safe-area behavior, and low-memory device performance remain manual checks. Automated evidence and screenshots are in validation/v2.10.8. Historical earlier-version test documents remain preserved.
-
-This release is on roseachy-v2.10.8-adaptive-navigation. GitHub main, earlier branches/exports, the uploaded ZIP, original extraction, and existing workspace checkout files were preserved.
+This complete release is on roseachy-v2.10.9-backup-repair. GitHub main, earlier release branches/exports, uploaded archives, extracted originals and existing checkouts were preserved. Automated evidence is in validation/v2.10.9; historical reports describe their own releases.

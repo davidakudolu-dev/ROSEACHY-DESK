@@ -238,7 +238,7 @@
     catch(e){el.textContent='⚠ Database check failed: '+(e.message||e);}
     finally{b.disabled=false;}
   });
-  $('safetyExportBtn')?.addEventListener('click',function(){ $('backupBtn')?.click(); });
+  // Full Backup buttons are bound directly to the shared controller in index.html.
   $('safetyBackupCheckBtn')?.addEventListener('click',function(){ $('safetyBackupCheckFile')?.click(); });
   $('safetyBackupCheckFile')?.addEventListener('change',async function(){
     const f=this.files?.[0];this.value='';if(!f)return;
