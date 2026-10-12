@@ -1,0 +1,52 @@
+[
+  {
+    "script": 0,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 1,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 2,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 3,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 4,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 5,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 6,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": 8,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": "sw.js",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "script": "js/pwa.js",
+    "passed": true,
+    "error": ""
+  }
+]

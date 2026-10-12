@@ -1,0 +1,294 @@
+{
+  "results": [
+    {
+      "name": "Responsive phones/tablets/desktops and 767/768 breakpoint; original single rail",
+      "passed": true,
+      "elapsedMs": 1041,
+      "detail": [
+        {
+          "width": 320,
+          "height": 568,
+          "position": "fixed"
+        },
+        {
+          "width": 360,
+          "height": 800,
+          "position": "fixed"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "position": "fixed"
+        },
+        {
+          "width": 430,
+          "height": 932,
+          "position": "fixed"
+        },
+        {
+          "width": 667,
+          "height": 375,
+          "position": "fixed"
+        },
+        {
+          "width": 767,
+          "height": 900,
+          "position": "fixed"
+        },
+        {
+          "width": 768,
+          "height": 1024,
+          "position": "relative"
+        },
+        {
+          "width": 820,
+          "height": 1180,
+          "position": "relative"
+        },
+        {
+          "width": 1024,
+          "height": 768,
+          "position": "relative"
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "position": "relative"
+        }
+      ]
+    },
+    {
+      "name": "Phone rail remains visible while scrolling; bottom controls can clear the rail",
+      "passed": true,
+      "elapsedMs": 115
+    },
+    {
+      "name": "Slow committed swipe follows finger, reveals live neighbor, and coordinates indicator",
+      "passed": true,
+      "elapsedMs": 1271,
+      "detail": {
+        "active": "Tx",
+        "current": "matrix(1, 0, 0, 1, -75, 0)",
+        "next": "tabStock",
+        "rail": 784,
+        "labels": 2,
+        "inert": true,
+        "indicator": 25.259668350219727
+      }
+    },
+    {
+      "name": "Partial swipe rolls back without a history entry",
+      "passed": true,
+      "elapsedMs": 1269
+    },
+    {
+      "name": "Short flick recognition with script-generated touch events; native touch cancellation",
+      "passed": true,
+      "elapsedMs": 1847
+    },
+    {
+      "name": "Navigation boundaries have no wrap-around",
+      "passed": true,
+      "elapsedMs": 2419
+    },
+    {
+      "name": "Repeated native left/right swipes follow the visible order without wrap or residue",
+      "passed": true,
+      "elapsedMs": 6236
+    },
+    {
+      "name": "Vertical scrolling and diagonal gestures never switch tabs",
+      "passed": true,
+      "elapsedMs": 2056
+    },
+    {
+      "name": "Inputs, tables, horizontal scrollers, text selection and overlays retain their gestures",
+      "passed": true,
+      "elapsedMs": 3451
+    },
+    {
+      "name": "Existing tab taps and keyboard arrows share state and indicator",
+      "passed": true,
+      "elapsedMs": 665
+    },
+    {
+      "name": "Business fixture uses the existing stock creation UI",
+      "passed": true,
+      "elapsedMs": 289
+    },
+    {
+      "name": "Ongoing sale, POS fields, adjustment and filters survive tap/swipe/desk changes",
+      "passed": true,
+      "elapsedMs": 3507
+    },
+    {
+      "name": "Held transaction survives navigation without modifying stock or ledger",
+      "passed": true,
+      "elapsedMs": 2065
+    },
+    {
+      "name": "Market purchase overlay blocks swipes and unfinished purchase stays on return",
+      "passed": true,
+      "elapsedMs": 1170
+    },
+    {
+      "name": "Financial session, unfinished amount and reason persist; explicit Lock works",
+      "passed": true,
+      "elapsedMs": 610
+    },
+    {
+      "name": "Themes, light/dark modes, four existing rounding values and indicator bounds",
+      "passed": true,
+      "elapsedMs": 10108,
+      "detail": [
+        {
+          "theme": "midnightgold",
+          "mode": "light",
+          "activeContrast": 4.827390799616049,
+          "inactiveContrast": 7.12693630044778
+        },
+        {
+          "theme": "midnightgold",
+          "mode": "dark",
+          "activeContrast": 4.827390799616049,
+          "inactiveContrast": 12.662558757411423
+        },
+        {
+          "theme": "cobalt",
+          "mode": "light",
+          "activeContrast": 4.786810481852853,
+          "inactiveContrast": 7.105790667313781
+        },
+        {
+          "theme": "cobalt",
+          "mode": "dark",
+          "activeContrast": 4.786810481852853,
+          "inactiveContrast": 12.636346578513885
+        },
+        {
+          "theme": "pearl",
+          "mode": "light",
+          "activeContrast": 17.327230533884187,
+          "inactiveContrast": 15.097301851108336
+        },
+        {
+          "theme": "pearl",
+          "mode": "dark",
+          "activeContrast": 8.175999830860388,
+          "inactiveContrast": 17.895771354525774
+        },
+        {
+          "theme": "ember",
+          "mode": "light",
+          "activeContrast": 5.212079640504309,
+          "inactiveContrast": 13.431397340753838
+        },
+        {
+          "theme": "ember",
+          "mode": "dark",
+          "activeContrast": 5.212079640504309,
+          "inactiveContrast": 18.057624040819455
+        },
+        {
+          "theme": "ocean",
+          "mode": "light",
+          "activeContrast": 9.217246268899883,
+          "inactiveContrast": 10.317806537630794
+        },
+        {
+          "theme": "ocean",
+          "mode": "dark",
+          "activeContrast": 8.413914396443381,
+          "inactiveContrast": 11.96119947253894
+        },
+        {
+          "theme": "aubergine",
+          "mode": "light",
+          "activeContrast": 12.805332085953738,
+          "inactiveContrast": 11.226646467742615
+        },
+        {
+          "theme": "aubergine",
+          "mode": "dark",
+          "activeContrast": 10.711810032493846,
+          "inactiveContrast": 12.292127866931958
+        },
+        {
+          "theme": "deepblue",
+          "mode": "light",
+          "activeContrast": 15.18677436331002,
+          "inactiveContrast": 12.137085839609256
+        },
+        {
+          "theme": "deepblue",
+          "mode": "dark",
+          "activeContrast": 5.109835086435532,
+          "inactiveContrast": 13.317340334040441
+        },
+        {
+          "theme": "green",
+          "mode": "light",
+          "activeContrast": 6.278382830617127,
+          "inactiveContrast": 10.188121604687414
+        },
+        {
+          "theme": "green",
+          "mode": "dark",
+          "activeContrast": 5.758216070227179,
+          "inactiveContrast": 11.828713557777192
+        }
+      ]
+    },
+    {
+      "name": "Existing font-scale and border-width controls update navigation without clipping",
+      "passed": true,
+      "elapsedMs": 4315,
+      "detail": {
+        "fontSizes": [
+          11,
+          11.395,
+          12.04,
+          12.685,
+          13.33
+        ],
+        "borderLevels": [
+          0,
+          5,
+          100
+        ]
+      }
+    },
+    {
+      "name": "Reduced motion and animations off switch without finger tracking",
+      "passed": true,
+      "elapsedMs": 2572
+    },
+    {
+      "name": "Resize or Back during a gesture cancels cleanly and preserves input",
+      "passed": true,
+      "elapsedMs": 1108
+    },
+    {
+      "name": "Section scroll positions survive switches",
+      "passed": true,
+      "elapsedMs": 812
+    },
+    {
+      "name": "Mixed swipes/taps/menus use bounded Back; overlay closes before section changes",
+      "passed": true,
+      "elapsedMs": 1897
+    },
+    {
+      "name": "Repeated use leaves one rail, five panels, no preview residue and no business changes",
+      "passed": true,
+      "elapsedMs": 2558
+    },
+    {
+      "name": "Refresh loads same appearance and application version",
+      "passed": true,
+      "elapsedMs": 248
+    }
+  ],
+  "errors": [],
+  "passed": 23
+}

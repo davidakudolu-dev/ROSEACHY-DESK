@@ -1,0 +1,219 @@
+{
+  "days": 30,
+  "products": 350,
+  "sales": 4500,
+  "sold": 9056,
+  "restocks": 960,
+  "received": 11727,
+  "adjustments": 360,
+  "removed": 347,
+  "priceEdits": 120,
+  "packEdits": 120,
+  "marketStates": 0,
+  "auditBefore": 350,
+  "issues": [],
+  "daily": [
+    {
+      "date": "2026-09-11",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27236
+    },
+    {
+      "date": "2026-09-12",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27306
+    },
+    {
+      "date": "2026-09-13",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27361
+    },
+    {
+      "date": "2026-09-14",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27467
+    },
+    {
+      "date": "2026-09-15",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27555
+    },
+    {
+      "date": "2026-09-16",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27641
+    },
+    {
+      "date": "2026-09-17",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27718
+    },
+    {
+      "date": "2026-09-18",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27819
+    },
+    {
+      "date": "2026-09-19",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27817
+    },
+    {
+      "date": "2026-09-20",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27881
+    },
+    {
+      "date": "2026-09-21",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 27947
+    },
+    {
+      "date": "2026-09-22",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28024
+    },
+    {
+      "date": "2026-09-23",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28109
+    },
+    {
+      "date": "2026-09-24",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28196
+    },
+    {
+      "date": "2026-09-25",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28294
+    },
+    {
+      "date": "2026-09-26",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28416
+    },
+    {
+      "date": "2026-09-27",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28500
+    },
+    {
+      "date": "2026-09-28",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28536
+    },
+    {
+      "date": "2026-09-29",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28661
+    },
+    {
+      "date": "2026-09-30",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28763
+    },
+    {
+      "date": "2026-10-01",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28856
+    },
+    {
+      "date": "2026-10-02",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 28965
+    },
+    {
+      "date": "2026-10-03",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29042
+    },
+    {
+      "date": "2026-10-04",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29144
+    },
+    {
+      "date": "2026-10-05",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29261
+    },
+    {
+      "date": "2026-10-06",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29368
+    },
+    {
+      "date": "2026-10-07",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29510
+    },
+    {
+      "date": "2026-10-08",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29617
+    },
+    {
+      "date": "2026-10-09",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29711
+    },
+    {
+      "date": "2026-10-10",
+      "transactions": 194,
+      "sales": 150,
+      "stock": 29798
+    }
+  ],
+  "totalCommits": 270,
+  "invalidBackups": 0,
+  "saved": 30,
+  "backupSaved": 30,
+  "backupItems": 350,
+  "auditAfter": 1773,
+  "transactionCount": 5820,
+  "backupRecords": 5820,
+  "notes": 0,
+  "marketAutoLowStockUpdate": true,
+  "ana": {
+    "scope": "2026-10-01 \u2013 2026-10-11 \u00b7 All divisions \u00b7 Based on 10 day(s) with sales",
+    "top": "Simulation Item 193 \u00b7 2.2/day",
+    "rising": "Simulation Item 62 \u00b7 +400.0% \u00b7 7 products",
+    "declining": "Simulation Item 36 \u00b7 -100.0% \u00b7 7 products",
+    "sales": "-24.3%"
+  },
+  "perf": {
+    "products": 350,
+    "saved": 30,
+    "audit": 1773
+  }
+}

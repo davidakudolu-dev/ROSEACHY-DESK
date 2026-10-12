@@ -1,0 +1,128 @@
+{
+  "tests": [
+    {
+      "name": "Stock seed: 24 = 2 packs",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Pack change keeps unit count",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Pack correction makes no money ledger entry",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Pack correction has audit record",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Exact adjustment 28 -> 4 packs + 4 units",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Fractional stock removal blocked",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Market review selects existing item",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Market restock quantity +12",
+      "ok": true,
+      "desc": "qty=40"
+    },
+    {
+      "name": "Market adopts latest cost/sell",
+      "ok": true,
+      "desc": "cost=150 price=240"
+    },
+    {
+      "name": "Market original batch cost retained",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Market partial batch rolls back ALL stock",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Market rollback does not add transactions",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Market rollback does not add audit events",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Full backup schema valid",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Backup includes deleted notes and current desk",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Backup includes Stock audit, Market, Settings",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Malformed stock import rejected atomically",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Rejected import does not append audit",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "Theme controls preserve business records",
+      "ok": true,
+      "desc": "themes=midnightgold,cobalt,pearl,ember,ocean,aubergine,deepblue,green"
+    },
+    {
+      "name": "Theme input text rendered",
+      "ok": true,
+      "desc": ""
+    },
+    {
+      "name": "No corrupted stock after restock",
+      "ok": true,
+      "desc": ""
+    }
+  ],
+  "errors": [],
+  "themes": {
+    "midnightgold": "",
+    "cobalt": "",
+    "pearl": "#FFFFFF",
+    "ember": "#FFFFFF",
+    "ocean": "#E8FAF6",
+    "aubergine": "#FFF0F8",
+    "deepblue": "#F3F6FE",
+    "green": "#F2FAF2"
+  },
+  "count": {
+    "audits": 4,
+    "tx": 2,
+    "marketPurchases": 1,
+    "notes": 2
+  },
+  "uncaughtErrors": [],
+  "seconds": 0.93
+}

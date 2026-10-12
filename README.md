@@ -1,9 +1,13 @@
-# Roseachy v2.10.0
+# Roseachy v2.10.8
 
-Inventory pack conversion, flexible corrections, latest current pricing and permanent adjustment history, upgraded from the uploaded v2.9.9 application.
+Adaptive bottom navigation below 768px and top navigation on larger screens, retaining the original header and menu. Touch swipes follow Sales → Stock → Reports → Notes → Analytics. Desk switching stays in the top menu.
 
-Download `exports/Roseachy_v2_10_0_Inventory_Packs_Pricing_Audit_Cloudflare.zip` and deploy its extracted contents to your existing Cloudflare Pages project.
+Built from the uploaded v2.10.7 Cloudflare PWA application. Unfinished forms, held transactions, selected products, themes, and bounded Back history are preserved. Financial Desk keeps its session during desk navigation and offers an explicit Lock control.
 
-Read [UPGRADE.md](UPGRADE.md) for usage, migration and deployment, and [TEST_REPORT.md](TEST_REPORT.md) for 44 successful scenario groups and the 300-product / 3,600-operation simulation. Machine-readable test results and screenshots are under `validation/v2.10.0/`.
+[Download the complete Cloudflare ZIP](exports/Roseachy_v2_10_8_Adaptive_Navigation_Swipe_Cloudflare_PWA.zip) · [Upgrade and deployment notes](NAVIGATION_UPGRADE_v2_10_8.md) · [Validation and device limits](NAVIGATION_TEST_REPORT_v2_10_8.md)
 
-The previous main branch and v2.9.4 export were preserved. `FIXES.md` contains the historical v2.9.4 notes; current release guidance is in UPGRADE.md.
+Extract the ZIP and upload its contents to the existing Cloudflare Pages project, with index.html at the root. No build is needed. Manifest, service worker, PWA glue, headers/redirects, and every original icon are included.
+
+29 browser scenario groups and 10 JavaScript syntax checks passed. Offline service-worker reload was verified. Physical Android/PWA installation, hardware Back, keyboard/safe-area behavior, and low-memory device performance remain manual checks. Automated evidence and screenshots are in validation/v2.10.8. Historical earlier-version test documents remain preserved.
+
+This release is on roseachy-v2.10.8-adaptive-navigation. GitHub main, earlier branches/exports, the uploaded ZIP, original extraction, and existing workspace checkout files were preserved.

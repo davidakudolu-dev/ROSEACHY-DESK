@@ -1,7 +1,7 @@
 /* Roseachy Cloudflare service worker — mobile-safe network-first navigation.
    Business records remain in IndexedDB. The network is preferred for page loads
    so a stale cached app shell cannot pin an older deployment when online. */
-const VERSION = '2.10.0-inventory-audit-pack-pricing';
+const VERSION = '2.10.8-adaptive-navigation-swipe';
 const CACHE = 'roseachy-shell-inventory-v27-' + VERSION;
 const SHELL = [
   '/index.html',
@@ -17,9 +17,13 @@ const SHELL = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE).then(cache => Promise.allSettled(
-      SHELL.map(url => cache.add(new Request(url, {cache:'reload'})))
-    ))
+    caches.open(CACHE).then(async cache => {
+      // Keep the previous service worker alive if essential offline files cannot cache.
+      // Never activate an update with a missing index or PWA glue script.
+      await Promise.all(['/index.html','/js/pwa.js'].map(url => cache.add(new Request(url, {cache:'reload'}))));
+      await Promise.allSettled(SHELL.filter(url => !['/index.html','/js/pwa.js'].includes(url))
+        .map(url => cache.add(new Request(url, {cache:'reload'}))));
+    })
   );
 });
 
@@ -62,11 +66,11 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(
     caches.open(CACHE).then(cache => cache.match(req, {ignoreSearch:true}).then(hit => {
-      const network = fetch(req).then(res => {
+      if(hit) return hit;
+      return fetch(req).then(res => {
         if (res && res.ok && res.type === 'basic') cache.put(req, res.clone()).catch(() => {});
         return res;
       });
-      return hit || network;
     }))
   );
 });

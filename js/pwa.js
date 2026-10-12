@@ -57,9 +57,14 @@
                   worker.postMessage({ type: 'SKIP_WAITING' });
                 };
                 const savePromise = window.RoseachyStore && window.RoseachyStore.whenSaved
-                  ? window.RoseachyStore.whenSaved().catch(function () {})
-                  : Promise.resolve();
-                savePromise.then(go);
+                  ? window.RoseachyStore.whenSaved()
+                  : Promise.reject(new Error('Database is not ready'));
+                savePromise.then(go).catch(function () {
+                  bar('updateBar', 'Update paused: a business record has not been saved. Do not reload. Check storage, then retry.', [
+                    { label: 'Retry after saving', onClick: function () { offer(worker); } },
+                    { label: 'Later', onClick: function () { hideBar('updateBar'); } }
+                  ]);
+                });
               }
             },
             { label: 'Later', onClick: function () { hideBar('updateBar'); } }
@@ -116,7 +121,7 @@
     syncInstall();
     if (window.RoseachyStore) {
       if (window.RoseachyStore.persistence) {
-        window.RoseachyStore.persistence().then(refreshStatus).catch(function () {});
+        window.RoseachyStore.persistence(true).then(refreshStatus).catch(function () {});
       }
       if (window.RoseachyStore.settings && window.RoseachyStore.settings.set) {
         window.RoseachyStore.settings.set('installedAt', new Date().toISOString()).catch(function () {});
@@ -155,7 +160,7 @@
 
     const st = window.RoseachyStore.status();
     let p = { supported: false };
-    try { p = await window.RoseachyStore.persistence(); } catch (e) {}
+    try { p = await window.RoseachyStore.persistence(false); } catch (e) {}
 
     let t = st.mode === 'indexeddb'
       ? 'Records are saved to this phone’s IndexedDB database after every change. '
@@ -163,7 +168,7 @@
 
     if (p.supported) {
       t += p.persisted
-        ? 'Persistent storage: granted (Android will not clear it automatically). '
+        ? 'Persistent storage: granted (reduces automatic eviction, not manual deletion). '
         : 'Persistent storage: not granted (the app still works; keep external backups). ';
     }
     if (p.usage != null) t += 'Using ' + fmtBytes(p.usage) + '.';
@@ -174,16 +179,75 @@
       const l = $('lastBackupInfo');
       if (l) {
         l.textContent = lb
-          ? 'Last full backup: ' + new Date(lb).toLocaleString()
-          : 'No full backup exported from this device yet.';
+          ? 'Last full backup download requested: ' + new Date(lb).toLocaleString()
+          : 'No full backup download has been recorded on this device.';
       }
     } catch (e) {}
   }
 
-  window.RoseachyRefreshStatus = refreshStatus;
+  // The Settings panel reads real browser/storage state; it never labels data "protected"
+  // merely because the app is installed. Checking a backup file never imports its records.
+  async function updateSafety(p, st, lastBackup) {
+    const text = function (id, value) { const el = $(id); if(el) el.textContent = value; };
+    text('safetyDbStatus', st.mode === 'indexeddb'
+      ? (st.stale ? '⚠ Records changed in another window. Reload before editing.' : st.pending ? '◌ Records still saving. Do not close the app.' : '✓ IndexedDB is available. Records are stored locally.')
+      : '⚠ Using fallback storage. Export a full backup and inspect browser storage.');
+    text('safetyPersistStatus', !p.supported || !p.persistSupported
+      ? '⚠ Storage protection cannot be requested in this browser.'
+      : p.persisted ? '✓ Persistent storage granted (automatic eviction resistance).' : '⚠ Standard browser storage. Request protection below.');
+    const remain = (p.quota != null && p.usage != null) ? Math.max(0,p.quota-p.usage) : null;
+    const ratio = p.quota>0 ? p.usage/p.quota : 0;
+    text('safetyUsageStatus', p.usage==null ? 'Browser storage usage unavailable.'
+      : 'Browser storage: ' + fmtBytes(p.usage) + ' used' + (remain==null ? '.' : ' · about '+fmtBytes(remain)+' quota remaining.')
+        + (ratio>.8 ? ' ⚠ Browser storage quota is nearly full.' : ''));
+    const protect = $('safetyProtectBtn');if(protect)protect.disabled=!!p.persisted || !p.persistSupported;
+    const age = lastBackup ? Date.now() - new Date(lastBackup).getTime() : Infinity;
+    const due = !Number.isFinite(age)||age > 24*60*60*1000;
+    text('safetyBackupStatus', !lastBackup
+      ? '⚠ No full backup download recorded. Create one and save it outside Chrome.'
+      : (due?'⚠ Daily backup overdue. ':'✓ Backup download requested within 24 hours. ')
+        + 'Last: '+new Date(lastBackup).toLocaleString()+'. Check the downloaded file.');
+  }
+
+  const oldStatus = refreshStatus;
+  refreshStatus = async function () {
+    await oldStatus();
+    if (!$('roseachyDataSafety') || !window.RoseachyStore) return;
+    const st=window.RoseachyStore.status();
+    let p={supported:false};try{p=await window.RoseachyStore.persistence(false)}catch(e){}
+    let date=null;try{date=await window.RoseachyStore.meta.get('lastFullBackup')}catch(e){}
+    await updateSafety(p,st,date);
+  };
+  window.RoseachyRefreshStatus = function () { return refreshStatus(); };
   window.addEventListener('roseachy:ready', function () {
     syncInstall();
-    refreshStatus();
+    // Request persistence once on startup of the installed PWA. Chrome may deny it.
+    if(window.RoseachyStore?.persistence){window.RoseachyStore.persistence(true).then(refreshStatus).catch(refreshStatus);}
+    else refreshStatus();
+  });
+
+  $('safetyProtectBtn')?.addEventListener('click', async function () {
+    const b=this;b.disabled=true;
+    try{await window.RoseachyStore.persistence(true);await refreshStatus();}
+    catch(e){$('safetyPersistStatus').textContent='Unable to request protection: '+(e.message||e);}
+    finally{const st=await window.RoseachyStore.persistence(false);b.disabled=!!st.persisted||!st.persistSupported;}
+  });
+  $('safetyVerifyBtn')?.addEventListener('click', async function () {
+    const b=this;b.disabled=true;const el=$('safetyVerificationStatus');el.textContent='Checking saved records…';
+    try {const v=await window.RoseachyStore.verify();el.textContent=v.ok?'✓ Database records match the saved copy. External backup is still essential.':'⚠ Database verification failed: '+v.bad.join(', ');}
+    catch(e){el.textContent='⚠ Database check failed: '+(e.message||e);}
+    finally{b.disabled=false;}
+  });
+  $('safetyExportBtn')?.addEventListener('click',function(){ $('backupBtn')?.click(); });
+  $('safetyBackupCheckBtn')?.addEventListener('click',function(){ $('safetyBackupCheckFile')?.click(); });
+  $('safetyBackupCheckFile')?.addEventListener('change',async function(){
+    const f=this.files?.[0];this.value='';if(!f)return;
+    const el=$('safetyFileStatus');el.textContent='Checking '+f.name+'…';
+    try{
+      if(!window.RoseachyCheckBackupFile)throw Error('Backup checker is not ready.');
+      const r=await window.RoseachyCheckBackupFile(f);
+      el.textContent='✓ Backup structure valid · '+r.products+' products · '+r.days+' saved days · Financial Desk '+(r.finance?'included':'not configured')+' · '+r.checksum+'. This check does not import anything.';
+    }catch(e){el.textContent='⚠ Backup check failed: '+(e?.message||e);}
   });
 
   /* A stale working copy must reload before editing or saving. */

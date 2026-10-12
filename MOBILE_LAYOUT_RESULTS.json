@@ -1,0 +1,122 @@
+[
+  {
+    "width": 320,
+    "tab": "Stock",
+    "scrollWidth": 320,
+    "innerWidth": 320,
+    "scrollHeight": 9992,
+    "visible": true
+  },
+  {
+    "width": 320,
+    "tab": "Analytics",
+    "scrollWidth": 320,
+    "innerWidth": 320,
+    "scrollHeight": 1956,
+    "visible": true
+  },
+  {
+    "width": 320,
+    "tab": "Notes",
+    "scrollWidth": 320,
+    "innerWidth": 320,
+    "scrollHeight": 856,
+    "visible": true
+  },
+  {
+    "width": 360,
+    "tab": "Stock",
+    "scrollWidth": 360,
+    "innerWidth": 360,
+    "scrollHeight": 9843,
+    "visible": true
+  },
+  {
+    "width": 360,
+    "tab": "Analytics",
+    "scrollWidth": 360,
+    "innerWidth": 360,
+    "scrollHeight": 1846,
+    "visible": true
+  },
+  {
+    "width": 360,
+    "tab": "Notes",
+    "scrollWidth": 360,
+    "innerWidth": 360,
+    "scrollHeight": 850,
+    "visible": true
+  },
+  {
+    "width": 390,
+    "tab": "Stock",
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "scrollHeight": 9820,
+    "visible": true
+  },
+  {
+    "width": 390,
+    "tab": "Analytics",
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "scrollHeight": 1756,
+    "visible": true
+  },
+  {
+    "width": 390,
+    "tab": "Notes",
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "scrollHeight": 850,
+    "visible": true
+  },
+  {
+    "width": 480,
+    "tab": "Stock",
+    "scrollWidth": 480,
+    "innerWidth": 480,
+    "scrollHeight": 9889,
+    "visible": true
+  },
+  {
+    "width": 480,
+    "tab": "Analytics",
+    "scrollWidth": 480,
+    "innerWidth": 480,
+    "scrollHeight": 1669,
+    "visible": true
+  },
+  {
+    "width": 480,
+    "tab": "Notes",
+    "scrollWidth": 480,
+    "innerWidth": 480,
+    "scrollHeight": 863,
+    "visible": true
+  },
+  {
+    "width": 768,
+    "tab": "Stock",
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "scrollHeight": 9569,
+    "visible": true
+  },
+  {
+    "width": 768,
+    "tab": "Analytics",
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "scrollHeight": 1872,
+    "visible": true
+  },
+  {
+    "width": 768,
+    "tab": "Notes",
+    "scrollWidth": 768,
+    "innerWidth": 768,
+    "scrollHeight": 976,
+    "visible": true
+  }
+]
