@@ -1,0 +1,272 @@
+{
+  "results": [
+    {
+      "name": "Product-performance cards, details and controls have readable rendered text in Ember and Midnight themes, light and dark",
+      "passed": true
+    },
+    {
+      "name": "Market Desk introduction uses readable text on the page surface in Ember and Midnight themes",
+      "passed": true
+    },
+    {
+      "name": "Financial heading, Recent Activity, Remove Money and activity entries are readable in both modes",
+      "passed": true
+    },
+    {
+      "name": "Every exit to Sales, Market and Settings locks immediately; every return requires the existing password",
+      "passed": true
+    },
+    {
+      "name": "Unfinished Financial amount and reason survive immediate exit encrypted and return only after authentication",
+      "passed": true
+    },
+    {
+      "name": "Incorrect password after returning keeps Financial Desk locked and business records intact",
+      "passed": true
+    },
+    {
+      "name": "Browser Back locks on exit and cannot restore an authenticated session from navigation history",
+      "passed": true
+    },
+    {
+      "name": "Navigating during a Financial save or authentication retains the desk until the action finishes",
+      "passed": true
+    },
+    {
+      "name": "A delayed password request from an earlier visit cannot unlock a later Financial Desk visit",
+      "passed": true
+    },
+    {
+      "name": "Both backup buttons still agree after automatic locking and private work restores on a fresh profile",
+      "passed": true
+    },
+    {
+      "name": "Same-desk Financial selection preserves the current session; explicit Lock still requires the password",
+      "passed": true
+    },
+    {
+      "name": "Encrypted exit drafts survive reload while Financial Desk starts locked",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "contrast": [
+    {
+      "label": "ember light product performance",
+      "textNodes": 65,
+      "minRatio": 5.212079640504309,
+      "bad": []
+    },
+    {
+      "label": "ember light product hover",
+      "textNodes": 3,
+      "minRatio": 13.431397340753838,
+      "bad": []
+    },
+    {
+      "label": "ember dark product performance",
+      "textNodes": 65,
+      "minRatio": 5.212079640504309,
+      "bad": []
+    },
+    {
+      "label": "ember dark product hover",
+      "textNodes": 3,
+      "minRatio": 18.057624040819455,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light product performance",
+      "textNodes": 65,
+      "minRatio": 4.827390799616049,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light product hover",
+      "textNodes": 3,
+      "minRatio": 7.12693630044778,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark product performance",
+      "textNodes": 65,
+      "minRatio": 4.827390799616049,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark product hover",
+      "textNodes": 3,
+      "minRatio": 12.662558757411423,
+      "bad": []
+    },
+    {
+      "label": "cobalt light product performance",
+      "textNodes": 65,
+      "minRatio": 4.786810481852853,
+      "bad": []
+    },
+    {
+      "label": "cobalt light product hover",
+      "textNodes": 3,
+      "minRatio": 7.105790667313781,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark product performance",
+      "textNodes": 65,
+      "minRatio": 4.786810481852853,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark product hover",
+      "textNodes": 3,
+      "minRatio": 12.636346578513885,
+      "bad": []
+    },
+    {
+      "label": "ember light market",
+      "textNodes": 1,
+      "minRatio": 13.431397340753838,
+      "bad": []
+    },
+    {
+      "label": "ember dark market",
+      "textNodes": 1,
+      "minRatio": 18.057624040819455,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light market",
+      "textNodes": 1,
+      "minRatio": 15.55453419687031,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark market",
+      "textNodes": 1,
+      "minRatio": 18.650039950268727,
+      "bad": []
+    },
+    {
+      "label": "cobalt light market",
+      "textNodes": 1,
+      "minRatio": 15.814339114586195,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark market",
+      "textNodes": 1,
+      "minRatio": 18.641157376789792,
+      "bad": []
+    },
+    {
+      "label": "ember light finance",
+      "textNodes": 9,
+      "minRatio": 4.643495888613195,
+      "bad": []
+    },
+    {
+      "label": "ember light remove hover",
+      "textNodes": 1,
+      "minRatio": 13.431397340753838,
+      "bad": []
+    },
+    {
+      "label": "ember light activity hover",
+      "textNodes": 3,
+      "minRatio": 13.431397340753838,
+      "bad": []
+    },
+    {
+      "label": "ember dark finance",
+      "textNodes": 9,
+      "minRatio": 11.412582618620148,
+      "bad": []
+    },
+    {
+      "label": "ember dark remove hover",
+      "textNodes": 1,
+      "minRatio": 18.057624040819455,
+      "bad": []
+    },
+    {
+      "label": "ember dark activity hover",
+      "textNodes": 3,
+      "minRatio": 11.412582618620148,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light finance",
+      "textNodes": 9,
+      "minRatio": 4.860549556101253,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light remove hover",
+      "textNodes": 1,
+      "minRatio": 16.49147995063101,
+      "bad": []
+    },
+    {
+      "label": "midnightgold light activity hover",
+      "textNodes": 3,
+      "minRatio": 4.860549556101253,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark finance",
+      "textNodes": 9,
+      "minRatio": 4.919256203651881,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark remove hover",
+      "textNodes": 1,
+      "minRatio": 16.784258266707322,
+      "bad": []
+    },
+    {
+      "label": "midnightgold dark activity hover",
+      "textNodes": 3,
+      "minRatio": 4.919256203651881,
+      "bad": []
+    },
+    {
+      "label": "cobalt light finance",
+      "textNodes": 9,
+      "minRatio": 4.962691634937708,
+      "bad": []
+    },
+    {
+      "label": "cobalt light remove hover",
+      "textNodes": 1,
+      "minRatio": 16.544712053744735,
+      "bad": []
+    },
+    {
+      "label": "cobalt light activity hover",
+      "textNodes": 3,
+      "minRatio": 4.962691634937708,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark finance",
+      "textNodes": 9,
+      "minRatio": 4.91038368521115,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark remove hover",
+      "textNodes": 1,
+      "minRatio": 16.76300078705371,
+      "bad": []
+    },
+    {
+      "label": "cobalt dark activity hover",
+      "textNodes": 3,
+      "minRatio": 4.91038368521115,
+      "bad": []
+    }
+  ],
+  "passed": 12
+}

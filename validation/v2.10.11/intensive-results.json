@@ -1,0 +1,372 @@
+{
+  "results": [
+    {
+      "name": "180 native retail entries and 120 POS entries reconcile independently in integer cents",
+      "passed": true,
+      "elapsedMs": 87524,
+      "evidence": {
+        "transactions": 300,
+        "unitsSold": 540,
+        "model": {
+          "sales": 5405.4,
+          "cashSales": 2162.1599999999994,
+          "nonCashSales": 3243.2400000000007,
+          "refunds": 0,
+          "netSales": 5405.4,
+          "received": 3843.360000000003,
+          "credit": 1562.0399999999981,
+          "closingDebt": 2062.0399999999972,
+          "closingPayable": 0,
+          "cashIn": 840.5999999999999,
+          "cashOut": 0,
+          "bankIn": 3002.7600000000016,
+          "bankOut": 0,
+          "expenses": 0,
+          "cogs": 1819.7999999999968,
+          "cogsReversed": 0,
+          "unitsSold": 540,
+          "unitsPurchased": 0,
+          "unitsAdjusted": 0,
+          "debtPaid": 0,
+          "supplierPaid": 0,
+          "customerOwedCash": 0,
+          "customerOwedBank": 0,
+          "byDiv": {
+            "pharmacy": {
+              "sales": 0,
+              "refunds": 0,
+              "units": 0
+            },
+            "essentials": {
+              "sales": 5405.400000000011,
+              "refunds": 0,
+              "units": 540
+            },
+            "unassigned": {
+              "sales": 0,
+              "refunds": 0,
+              "units": 0
+            }
+          },
+          "retailXferIn": 0,
+          "retailXferOut": 0,
+          "todaySalesXferOut": 0,
+          "saleCashoutElectronic": 0,
+          "saleCashoutCash": 0,
+          "pos": {
+            "opening": 10000,
+            "electronicOpening": 10000,
+            "cashIn": 933.9999999999999,
+            "cashOut": 433.3999999999998,
+            "xferIn": 0,
+            "xferOut": 0,
+            "adjIn": 0,
+            "adjOut": 0,
+            "elecIn": 499.40000000000043,
+            "elecOut": 867.9999999999999,
+            "income": 131.99999999999972,
+            "incomeCash": 66.00000000000004,
+            "incomeElec": 66.00000000000004,
+            "count": 120,
+            "expectedCash": 10500.6,
+            "expectedElectronic": 9631.4
+          },
+          "closingDebtRaw": 2062.0399999999972,
+          "closingPayableRaw": 0,
+          "debtOverpaid": 0,
+          "payableOverpaid": 0,
+          "customerOwed": 0,
+          "expectedCash": 10840.6,
+          "expectedBank": 3002.7600000000016,
+          "retailSales": 5405.4,
+          "netCogs": 1819.7999999999968,
+          "grossProfit": 3585.600000000003,
+          "margin": 66.3336663336664,
+          "storeCash": 21341.2,
+          "earnings": 3717.6000000000026
+        }
+      }
+    },
+    {
+      "name": "Cash/bank expenses and external payments reduce only the intended fund",
+      "passed": true,
+      "elapsedMs": 1163,
+      "evidence": {
+        "sales": 5405.4,
+        "cashSales": 2162.1599999999994,
+        "nonCashSales": 3243.2400000000007,
+        "refunds": 0,
+        "netSales": 5405.4,
+        "received": 3843.360000000003,
+        "credit": 1562.0399999999981,
+        "closingDebt": 2062.0399999999972,
+        "closingPayable": 0,
+        "cashIn": 840.5999999999999,
+        "cashOut": 5,
+        "bankIn": 3002.7600000000016,
+        "bankOut": 7,
+        "expenses": 36,
+        "cogs": 1819.7999999999968,
+        "cogsReversed": 0,
+        "unitsSold": 540,
+        "unitsPurchased": 0,
+        "unitsAdjusted": 0,
+        "debtPaid": 0,
+        "supplierPaid": 0,
+        "customerOwedCash": 0,
+        "customerOwedBank": 0,
+        "byDiv": {
+          "pharmacy": {
+            "sales": 0,
+            "refunds": 0,
+            "units": 0
+          },
+          "essentials": {
+            "sales": 5405.400000000011,
+            "refunds": 0,
+            "units": 540
+          },
+          "unassigned": {
+            "sales": 0,
+            "refunds": 0,
+            "units": 0
+          }
+        },
+        "retailXferIn": 0,
+        "retailXferOut": 0,
+        "todaySalesXferOut": 0,
+        "saleCashoutElectronic": 0,
+        "saleCashoutCash": 0,
+        "pos": {
+          "opening": 10000,
+          "electronicOpening": 10000,
+          "cashIn": 933.9999999999999,
+          "cashOut": 433.3999999999998,
+          "xferIn": 0,
+          "xferOut": 0,
+          "adjIn": 0,
+          "adjOut": 0,
+          "elecIn": 499.40000000000043,
+          "elecOut": 867.9999999999999,
+          "income": 131.99999999999972,
+          "incomeCash": 66.00000000000004,
+          "incomeElec": 66.00000000000004,
+          "count": 120,
+          "expectedCash": 10500.6,
+          "expectedElectronic": 9631.4
+        },
+        "closingDebtRaw": 2062.0399999999972,
+        "closingPayableRaw": 0,
+        "debtOverpaid": 0,
+        "payableOverpaid": 0,
+        "customerOwed": 0,
+        "expectedCash": 10835.6,
+        "expectedBank": 2995.7600000000016,
+        "retailSales": 5405.4,
+        "netCogs": 1819.7999999999968,
+        "grossProfit": 3585.600000000003,
+        "margin": 66.3336663336664,
+        "storeCash": 21336.2,
+        "earnings": 3717.6000000000026
+      }
+    },
+    {
+      "name": "Linked partial refunds preserve original amounts and reject over-refunding",
+      "passed": true,
+      "elapsedMs": 766,
+      "evidence": {
+        "remainingRefundable": 1,
+        "transactions": 306
+      }
+    },
+    {
+      "name": "Cash moves between Retail and POS conserve total physical cash",
+      "passed": true,
+      "elapsedMs": 255,
+      "evidence": {
+        "physicalCash": 21346.21
+      }
+    },
+    {
+      "name": "Saving the same day repeatedly updates it once without double-counting Financial records",
+      "passed": true,
+      "elapsedMs": 1741,
+      "evidence": {
+        "savedDays": 1,
+        "bankBalance": 52995.76
+      }
+    },
+    {
+      "name": "Full Backup and fresh restore preserve the stressed ledger, stock and accounting totals",
+      "passed": true,
+      "elapsedMs": 2095,
+      "evidence": {
+        "products": 1,
+        "transactions": 308,
+        "savedDays": 1
+      }
+    },
+    {
+      "name": "POS negative, zero, non-finite and over-limit monetary values cannot be recorded",
+      "passed": true,
+      "elapsedMs": 745,
+      "evidence": [
+        {
+          "amount": "-1",
+          "fee": "0",
+          "recorded": 0,
+          "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+        },
+        {
+          "amount": "0",
+          "fee": "0",
+          "recorded": 0,
+          "warning": "Enter an amount greater than zero."
+        },
+        {
+          "amount": "1e309",
+          "fee": "0",
+          "recorded": 0,
+          "warning": "Enter an amount greater than zero."
+        },
+        {
+          "amount": "1",
+          "fee": "-1",
+          "recorded": 0,
+          "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+        },
+        {
+          "amount": "1",
+          "fee": "10000000000000",
+          "recorded": 0,
+          "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+        },
+        {
+          "amount": "1",
+          "fee": "1e308",
+          "recorded": 0,
+          "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+        }
+      ]
+    },
+    {
+      "name": "Failed native POS storage write must not claim success or lose the entered transaction after reload",
+      "passed": true,
+      "elapsedMs": 1243,
+      "evidence": {
+        "toast": "⚠ Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+        "form": "25",
+        "liveTransactions": 0,
+        "status": {
+          "mode": "indexeddb",
+          "loaded": true,
+          "migration": {
+            "status": "complete",
+            "completedAt": "2026-10-12T15:09:02.440Z",
+            "source": "none",
+            "keys": [],
+            "schema": 7,
+            "recordCollections": true
+          },
+          "dbName": "roseachy_pwa_db",
+          "dbVersion": 7,
+          "recordCollections": true,
+          "revision": 3,
+          "stale": false,
+          "pending": 1,
+          "lastError": "Injected permanent draft storage failure"
+        },
+        "transactionsAfterReload": 0
+      }
+    },
+    {
+      "name": "Failed Financial vault write must remain absent after storage recovery and reload",
+      "passed": true,
+      "elapsedMs": 1417,
+      "evidence": {
+        "toast": "Not saved: Injected permanent vault storage failure",
+        "liveBalance": 5000000,
+        "liveEvents": 0,
+        "reloadedBalance": 5000000,
+        "reloadedEvents": 0
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "nativeSales": 180,
+    "nativePOS": 120,
+    "posValidation": [
+      {
+        "amount": "-1",
+        "fee": "0",
+        "recorded": 0,
+        "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+      },
+      {
+        "amount": "0",
+        "fee": "0",
+        "recorded": 0,
+        "warning": "Enter an amount greater than zero."
+      },
+      {
+        "amount": "1e309",
+        "fee": "0",
+        "recorded": 0,
+        "warning": "Enter an amount greater than zero."
+      },
+      {
+        "amount": "1",
+        "fee": "-1",
+        "recorded": 0,
+        "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+      },
+      {
+        "amount": "1",
+        "fee": "10000000000000",
+        "recorded": 0,
+        "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+      },
+      {
+        "amount": "1",
+        "fee": "1e308",
+        "recorded": 0,
+        "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+      }
+    ],
+    "posStorageFailure": {
+      "toast": "⚠ Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+      "form": "25",
+      "liveTransactions": 0,
+      "status": {
+        "mode": "indexeddb",
+        "loaded": true,
+        "migration": {
+          "status": "complete",
+          "completedAt": "2026-10-12T15:09:02.440Z",
+          "source": "none",
+          "keys": [],
+          "schema": 7,
+          "recordCollections": true
+        },
+        "dbName": "roseachy_pwa_db",
+        "dbVersion": 7,
+        "recordCollections": true,
+        "revision": 3,
+        "stale": false,
+        "pending": 1,
+        "lastError": "Injected permanent draft storage failure"
+      },
+      "transactionsAfterReload": 0
+    },
+    "financialStorageFailure": {
+      "toast": "Not saved: Injected permanent vault storage failure",
+      "liveBalance": 5000000,
+      "liveEvents": 0,
+      "reloadedBalance": 5000000,
+      "reloadedEvents": 0
+    },
+    "passed": 9,
+    "failed": 0
+  }
+}
