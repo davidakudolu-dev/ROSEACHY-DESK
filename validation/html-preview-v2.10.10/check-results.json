@@ -1,0 +1,9 @@
+{
+  "version": "2.10.10",
+  "localHtmlStartup": true,
+  "theme": true,
+  "deskNavigation": true,
+  "fileHelpers": true,
+  "financialSetupAndExitLock": true,
+  "errors": []
+}
