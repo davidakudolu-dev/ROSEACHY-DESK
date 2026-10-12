@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "file": "inline-0",
+      "passed": true
+    },
+    {
+      "file": "inline-1",
+      "passed": true
+    },
+    {
+      "file": "inline-2",
+      "passed": true
+    },
+    {
+      "file": "inline-3",
+      "passed": true
+    },
+    {
+      "file": "inline-4",
+      "passed": true
+    },
+    {
+      "file": "inline-5",
+      "passed": true
+    },
+    {
+      "file": "inline-6",
+      "passed": true
+    },
+    {
+      "file": "inline-8",
+      "passed": true
+    },
+    {
+      "file": "js/pwa.js",
+      "passed": true
+    },
+    {
+      "file": "sw.js",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "originalFiles": 35,
+  "changedRuntimeFiles": [
+    "index.html",
+    "sw.js"
+  ],
+  "missingOriginalFiles": []
+}

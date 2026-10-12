@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Roseachy · Sales &amp; Financial Desk</title>
-<meta name="roseachy-version" content="2.10.9">
+<meta name="roseachy-version" content="2.10.10">
 <meta name="theme-color" content="#163E32">
 <meta name="application-name" content="Roseachy">
 <meta name="mobile-web-app-capable" content="yes">
@@ -2924,6 +2924,47 @@ html[data-rs-exact-theme] body[data-theme] #rsMainTabs[data-rs-swipe-tracking="t
 .rs-swipe-labels.rs-label-active{color:var(--rs-button-fg,var(--tab-active-text,var(--on-fill)))}
 
 </style>
+<style id="roseachy-surface-text-v2-10-10">
+/* Match text to its actual surface, including light panels inside dark themes. */
+html body[data-theme] .marketHero p,
+html body[data-theme] #finMain > .finTitle :is(h2,.small),
+html body[data-theme] #finMain > .finTitle #finMenuBtn,
+html body[data-theme] #finOverview > .finSubhead h3,
+html body[data-theme] #finRecent :is(.finTx span,.finTx small,p.small){
+  color:var(--rs-shell-fg,var(--page-text,var(--text-primary)))!important;
+  -webkit-text-fill-color:var(--rs-shell-fg,var(--page-text,var(--text-primary)))!important;
+}
+html body[data-theme] #finRecent .finTx small{opacity:1}
+html body[data-theme] #finRemove{
+  background:var(--roseachy-input,var(--field-bg))!important;
+  color:var(--rs-input-fg,var(--text-primary))!important;
+  -webkit-text-fill-color:var(--rs-input-fg,var(--text-primary))!important;
+}
+html body[data-theme] #finOpenHistory{
+  background:transparent!important;
+  color:var(--rs-shell-fg,var(--page-text,var(--text-primary)))!important;
+  -webkit-text-fill-color:var(--rs-shell-fg,var(--page-text,var(--text-primary)))!important;
+}
+html[data-rs-exact-theme="true"] body[data-theme] :is(.rsTrendCard,.rsAnaProductDetail){
+  color:var(--rs-input-fg)!important;
+}
+html[data-rs-exact-theme="true"] body[data-theme] :is(.rsTrendCard,.rsAnaProductDetail) :is(summary,span,strong,b,small,p,.small,.rsTrendMeta,.rsCompareRow,.rsTrendEmpty,.rsTrendNote,.rsAnaRow,.rsAnaHint,.rsTrendRestock,.rsCompareNumber),
+html[data-rs-exact-theme="true"] body[data-theme] .rsTrendCard > summary .rsTrendSummary::after,
+html[data-rs-exact-theme="true"] body[data-theme] .rsTrendCard .rsAnaSwitch button:not(.active),
+html[data-rs-exact-theme="true"] body[data-theme] .rsAnaProductDetail button.ghost{
+  color:var(--rs-input-fg)!important;
+  -webkit-text-fill-color:var(--rs-input-fg)!important;
+  opacity:1;
+}
+html body[data-theme] #finRecent .finPlus{
+  color:var(--rs-shell-success)!important;
+  -webkit-text-fill-color:var(--rs-shell-success)!important;
+}
+html body[data-theme] #finRecent .finMinus{
+  color:var(--rs-shell-error)!important;
+  -webkit-text-fill-color:var(--rs-shell-error)!important;
+}
+</style>
 </head>
 <body>
 <div id="bootSplash" class="bootSplash" aria-hidden="true"><div class="bootLockup"><svg class="bootLogo" viewBox="0 0 960.98 954.66" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path d="M143.33 369.55l-40.7-45.22a8.56 8.56 0 0 1-1.72-7.9l14.63-56c17.84-68.33 57.75-109 113.81-121.65 115-26 159.84 88.29 175.42 137.42 2.41 7.6 13.28 8 17.78.65 27.19-44.55 113.61-150.08 228.35-162 86.14-9 136.32 14.89 157.25 28.64 6.92 4.54 8.28 13.17 3.18 20.46l-68.73 79.37c-5.39 7.7-16.46 10.85-24.8 7-42.48-19.6-110.66-26.74-173.61 18.84-63.46 46.43-122.75 133.38-148.47 174.21-4.71 7.48-16.18 5.35-17.49-3.19-10.75-70.15-47.19-254.69-130.24-245.86-105.6 11.22-105.58 123.94-98.52 172.08.49 3.3-3.3 5.5-5.42 3.15Z"/><path d="M957.33 597.12l-67.84 88.61c-6.49 7.59-19.63 8.6-28.63 2.25l-109.48-64.14c-5.54-3.91-13.52-3.24-17.63 1.45L471.94 951.64c-3.82 4.61-11.75 3.82-16.11-1.56L100.34 472.58c-4-4.93-11.4-3.08-13.14 3.24l-31.12 89.94a11.29 11.29 0 0 1-13.81 6.55l-40.87-7.1a2 2 0 0 1 .68-3.86c12.07.68 28.71-3.79 36.82-3.21a5.61 5.61 0 0 0 5.89-4.4l31.76-142.8c1.6-6.13 8.48-8.45 12.55-4.22l362.81 397c4.73 4.92 12.67 4.62 16-.63l248.73-353.43c3.72-5.16 11.56-6.72 17.24-3.4L952 573.53c9.44 5.47 11.81 16.01 5.33 23.59Z"/><circle cx="437.82" cy="54.74" r="54.74"/></g></svg><span class="bootName">Roseachy</span></div></div>
@@ -5391,7 +5432,7 @@ function rsApplyTextTokens(rs,t,dark,theme){
   /* Solid, mode-invariant accent for both active controls and primary actions. */
   const fillPair=[t.accent,rsOn(t.accent)],btnPair=[t.accent,rsOn(t.accent)];
   const okBg=rsMixHex(sf,t.success,.14),wnBg=rsMixHex(sf,t.warning,.14),erBg=rsMixHex(sf,t.error,.14);
-  set('--text',primary);set('--text-primary',primary);set('--text-secondary',secondary);set('--text-muted',muted);set('--text-placeholder',ph);set('--text-disabled',dis);set('--muted',muted);
+  set('--page-text',primary);set('--text',primary);set('--text-primary',primary);set('--text-secondary',secondary);set('--text-muted',muted);set('--text-placeholder',ph);set('--text-disabled',dis);set('--muted',muted);
   set('--surface-primary',bg);set('--surface-secondary',rail);set('--surface-elevated',elev);set('--field-bg',field);
   set('--border-subtle',subtle);set('--border-strong',strong);set('--line',subtle);set('--line2',subtle);
   set('--accent-primary',t.accent);set('--accent-contrast',rsOn(t.accent));set('--accent-text',accText);set('--accent-deep',accText);
@@ -5410,6 +5451,9 @@ function rsContrastGuard(foreground,background,min=4.5){
  return rsCR(color,background)>=min?color:goal;
 }
 function rsApplyExactTokens(style,t,dark){
+ style.setProperty('--rs-shell-success',rsContrastGuard('#14835e',t.exact?.shell||t.background));
+ style.setProperty('--rs-shell-error',rsContrastGuard('#c24d35',t.exact?.shell||t.background));
+
  const p=t.exact;if(!p){['--roseachy-shell','--roseachy-primary','--roseachy-secondary','--roseachy-buttons','--roseachy-input','--roseachy-heading','--roseachy-body','--roseachy-muted','--roseachy-border','--roseachy-buttontext','--roseachy-inverse','--rs-shell-fg','--rs-card-fg','--rs-card-muted','--rs-input-fg','--rs-input-placeholder','--rs-contrast-fg','--rs-button-fg','--rs-tab-fg'].forEach(k=>style.removeProperty(k));return;}
  const set=(k,v)=>style.setProperty(k,v);
  const pageBase=rsCR(p.text,p.shell)>=4.5?p.text:(rsCR(p.onInput,p.shell)>=4.5?p.onInput:p.muted);
@@ -5533,7 +5577,13 @@ function marketTxEdited(t){if(!t?.marketPurchaseId)return;const m=getMarketState
 function syncSupplierPaymentRecordForTx(t,action){if(!t?.supplierPurchaseId||!t?.supplierPaymentId)return;const m=getMarketState(),p=(m.marketPurchases||[]).find(x=>x.id===t.supplierPurchaseId);if(!p)return;if(p.initialPaymentId===t.supplierPaymentId){if(action==='delete'){p.initialPaymentDeleted=true;p.initialPaymentDeletedAt=nowIso()}else{p.initialPaymentDeleted=false;p.initialPaymentDeletedAt=null}}else{const pay=(p.payments||[]).find(x=>x.id===t.supplierPaymentId);if(pay){if(action==='delete'){pay.deleted=true;pay.deletedAt=nowIso()}else{pay.deleted=false;pay.deletedAt=null}}}p.updatedAt=nowIso();setMarketState(m)}
 function marketTxDeleted(t){if(!t?.marketPurchaseId)return;const m=getMarketState(),h=marketHistoryForTx(m,t);if(h){h.status='reversed';h.reversedAt=nowIso();h.deletedTxId=t.id}syncSupplierPurchaseTxRelation(m,t,'delete');const reqIds=new Set([...(Array.isArray(t.marketRequestIds)?t.marketRequestIds:[]),...(t.marketSourceType==='request'&&t.marketSourceId?[t.marketSourceId]:[])]);for(const rid of reqIds){const r=m.requests.find(x=>x.id===rid);if(r){r.status='open';r.purchasedAt=null;r.reopenedAt=nowIso();r.purchase=null;r.movedAt=null;r.movedToActiveListId=null;r.movedToActiveItemId=null}}setMarketState(m)}
 function marketTxRestored(t){if(!t?.marketPurchaseId)return;const m=getMarketState(),h=marketHistoryForTx(m,t);if(h){h.status='applied';h.restoredAt=nowIso();h.reversedAt=null;h.txId=t.id}syncSupplierPurchaseTxRelation(m,t,'restore');const reqIds=new Set([...(Array.isArray(t.marketRequestIds)?t.marketRequestIds:[]),...(t.marketSourceType==='request'&&t.marketSourceId?[t.marketSourceId]:[])]);for(const rid of reqIds){const r=m.requests.find(x=>x.id===rid);if(r){r.status='purchased';r.purchasedAt=nowIso()}}setMarketState(m)}
-function switchDesk(d,nav=true){window.RoseachyAdaptiveNavigation?.beforeNavigation();currentDesk=d==='financial'?'financial':d==='market'?'market':d==='settings'?'settings':'sales';if(currentDesk!=='financial')$('finMenu')?.classList.add('hidden');if(currentDesk==='market'&&typeof closeXfer==='function')closeXfer();$('salesDesk').classList.toggle('hidden',currentDesk!=='sales');$('marketDesk').classList.toggle('hidden',currentDesk!=='market');$('settingsDesk').classList.toggle('hidden',currentDesk!=='settings');$('financialDesk').classList.toggle('hidden',currentDesk!=='financial');if(currentDesk==='financial'&&!finEntered)finEnter();const titles={financial:'Financial Desk',sales:'Sales Desk',market:'Market Desk',settings:'Settings'},subs={financial:'Private business bank and daily review.',sales:'Daily sales, stock and records — all in one place.',market:'Purchasing and repricing linked to inventory.',settings:'Appearance, pricing and experience controls.'};$('deskTitle').textContent=titles[currentDesk];$('deskSub').textContent=subs[currentDesk];$('deskMenu').classList.add('hidden');$('deskMenu').querySelectorAll('[data-desk]').forEach(b=>b.classList.toggle('active',b.dataset.desk===currentDesk));document.querySelector('.brandLockup')?.setAttribute('aria-label','Roseachy '+titles[currentDesk]);if(currentDesk==='market')renderMarket();if(currentDesk==='settings'){renderAppearanceControls();renderPricingSettings();requestAnimationFrame(syncStudioPreviewCondense)}finReminder();window.RoseachyAdaptiveNavigation?.afterNavigation();if(nav&&window.RoseachyNav)window.RoseachyNav.commit('desk')}
+function switchDesk(d,nav=true){
+ const destination=d==='financial'?'financial':d==='market'?'market':d==='settings'?'settings':'sales';
+ if(currentDesk==='financial'&&destination!=='financial'){
+  if(finBusy||roseachyBackupBusy){showToast('A Financial Desk action is finishing. Try switching desks again shortly.');return false}
+  finLockForDeskExit();
+ }
+window.RoseachyAdaptiveNavigation?.beforeNavigation();currentDesk=d==='financial'?'financial':d==='market'?'market':d==='settings'?'settings':'sales';if(currentDesk!=='financial')$('finMenu')?.classList.add('hidden');if(currentDesk==='market'&&typeof closeXfer==='function')closeXfer();$('salesDesk').classList.toggle('hidden',currentDesk!=='sales');$('marketDesk').classList.toggle('hidden',currentDesk!=='market');$('settingsDesk').classList.toggle('hidden',currentDesk!=='settings');$('financialDesk').classList.toggle('hidden',currentDesk!=='financial');if(currentDesk==='financial'&&!finEntered)finEnter();const titles={financial:'Financial Desk',sales:'Sales Desk',market:'Market Desk',settings:'Settings'},subs={financial:'Private business bank and daily review.',sales:'Daily sales, stock and records — all in one place.',market:'Purchasing and repricing linked to inventory.',settings:'Appearance, pricing and experience controls.'};$('deskTitle').textContent=titles[currentDesk];$('deskSub').textContent=subs[currentDesk];$('deskMenu').classList.add('hidden');$('deskMenu').querySelectorAll('[data-desk]').forEach(b=>b.classList.toggle('active',b.dataset.desk===currentDesk));document.querySelector('.brandLockup')?.setAttribute('aria-label','Roseachy '+titles[currentDesk]);if(currentDesk==='market')renderMarket();if(currentDesk==='settings'){renderAppearanceControls();renderPricingSettings();requestAnimationFrame(syncStudioPreviewCondense)}finReminder();window.RoseachyAdaptiveNavigation?.afterNavigation();if(nav&&window.RoseachyNav)window.RoseachyNav.commit('desk')}
 $('deskMenuBtn').addEventListener('click',()=>{$('deskMenu').classList.toggle('hidden');finReminder()});$('deskMenu').addEventListener('click',e=>{const b=e.target.closest('[data-desk]');if(b)switchDesk(b.dataset.desk)});document.addEventListener('click',e=>{if(!e.target.closest('#deskMenu')&&!e.target.closest('#deskMenuBtn')){$('deskMenu')?.classList.add('hidden');finReminder()}});
 function positionMarketUtilityMenu(){const menu=$('marketUtilityMenu'),btn=$('marketMoreBtn');if(!menu||!btn||menu.classList.contains('hidden'))return;const gap=6,pad=8,br=btn.getBoundingClientRect();menu.style.visibility='hidden';menu.style.setProperty('right','auto','important');menu.style.setProperty('left','0px','important');menu.style.setProperty('top','0px','important');const mw=Math.min(menu.offsetWidth,Math.max(0,window.innerWidth-pad*2)),mh=Math.min(menu.offsetHeight,Math.max(0,window.innerHeight-pad*2));let left=br.right-mw;left=Math.max(pad,Math.min(left,window.innerWidth-mw-pad));let top=br.bottom+gap;if(top+mh>window.innerHeight-pad&&br.top-gap-mh>=pad)top=br.top-gap-mh;top=Math.max(pad,Math.min(top,window.innerHeight-mh-pad));menu.style.setProperty('left',Math.round(left)+'px','important');menu.style.setProperty('top',Math.round(top)+'px','important');menu.style.visibility=''}
 function closeMarketUtilityMenu(){$('marketUtilityMenu')?.classList.add('hidden')}
@@ -5716,6 +5766,7 @@ function roseachyNavSig(st){if(!st)return'';const c={...st,scrollY:0,overlays:[]
    return false
  }
  function backInternal(){
+   if(currentDesk==='financial'&&(finBusy||roseachyBackupBusy)){showToast('A Financial Desk action is finishing. Try Back again shortly.');return true}
    if(closeTemporary())return true;
    ensureHomeAnchor();
    if(path.length){
@@ -5832,11 +5883,28 @@ async function finWrap(raw,secret){const salt=finB64(finRandom(16)),key=await fi
 async function finUnwrap(box,secret){const key=await finDerive(secret,box.salt);return finOpen(key,box.box)}
 function finVaultBase(anchorK,asOf){return {version:1,anchor:{amountK:anchorK,asOf,createdAt:new Date().toISOString()},events:[],reviews:[]}}
 async function finPersist(){if(!finKey||!finPrivate)throw Error('Financial Desk is locked');const meta=finStored();if(!meta)throw Error('Financial setup is missing');meta.vault=await finSeal(finKey,new TextEncoder().encode(JSON.stringify(finPrivate)));storeSet(FIN_META,JSON.stringify(meta));await RS.whenSaved()}
-function finClose(){finEntered=false;finKey=null;finPrivate=null;finView='overview';finUnmasked=true;fin$('finMain').classList.add('hidden');fin$('finGate').classList.remove('hidden');fin$('finGateError').textContent='';fin$('finUnlockPass').value='';fin$('finRecoverKey').value='';fin$('finSetupPassword').value='';fin$('finSetupPassword2').value='';fin$('finNewPass').value='';fin$('finRecoveryOnce').classList.add('hidden');fin$('finBalance').textContent='—';fin$('finRecent').replaceChildren();fin$('finHistoryRows').replaceChildren();fin$('finReviewActual').value='';fin$('finReviewReason').value='';fin$('finEditPanel').classList.add('hidden');fin$('finAdminPanel').classList.add('hidden');fin$('finHistoryPanel').classList.add('hidden');fin$('finReviewPanel').classList.add('hidden');fin$('finMenu').classList.add('hidden');fin$('finReportPanel').classList.add('hidden');for(const id of ['finReviewCalculated','finDifference','finReviewDay','finHistorySummary','finIn','finOut','finReviewAlready','finRecoveryValue','finRotateOutput','finAdminNotice']){const field=fin$(id);if(field)field.textContent=''}fin$('finRotateOutputWrap').classList.add('hidden');fin$('finEditAmount').value='';fin$('finEditPassword').value='';fin$('finEditReason').value='';fin$('finCurrentPassword').value='';fin$('finRecoveryNew').value='';fin$('finRecoveryNew2').value='';finPinClear()}
+/* Desk switches discard the unlocked session; unfinished work stays encrypted. */
+let finDeskExitSaved=Promise.resolve(),finDeskEpoch=0;
+function finLockForDeskExit(){
+ if(finKey){
+  // Capture with the current key before clearing it. Serialize the write after any
+  // existing autosave so a late autosave cannot replace this final private draft.
+  const capture=backupCaptureWorking();
+  backupWorkGeneration++;
+  const saved=Promise.all([backupWorkChain.catch(()=>{}),capture]).then(async([,state])=>{
+   storeSet(BACKUP_WORK_KEY,JSON.stringify(state));await RS.whenSaved();
+  });
+  backupWorkChain=saved.catch(e=>showToast('Financial Desk locked, but unfinished work was not saved: '+(e.message||e))).finally(()=>{if(!finKey)backupFinanceCache=null});
+  finDeskExitSaved=backupWorkChain;
+ }
+ finClose();backupFinanceCache=null;
+}
+
+function finClose(){finDeskEpoch++;finEntered=false;finKey=null;finPrivate=null;finView='overview';finUnmasked=true;fin$('finMain').classList.add('hidden');fin$('finGate').classList.remove('hidden');fin$('finGateError').textContent='';fin$('finUnlockPass').value='';fin$('finRecoverKey').value='';fin$('finSetupPassword').value='';fin$('finSetupPassword2').value='';fin$('finNewPass').value='';fin$('finRecoveryOnce').classList.add('hidden');fin$('finBalance').textContent='—';fin$('finRecent').replaceChildren();fin$('finHistoryRows').replaceChildren();fin$('finReviewActual').value='';fin$('finReviewReason').value='';fin$('finEditPanel').classList.add('hidden');fin$('finAdminPanel').classList.add('hidden');fin$('finHistoryPanel').classList.add('hidden');fin$('finReviewPanel').classList.add('hidden');fin$('finMenu').classList.add('hidden');fin$('finReportPanel').classList.add('hidden');for(const id of ['finReviewCalculated','finDifference','finReviewDay','finHistorySummary','finIn','finOut','finReviewAlready','finRecoveryValue','finRotateOutput','finAdminNotice']){const field=fin$(id);if(field)field.textContent=''}fin$('finRotateOutputWrap').classList.add('hidden');fin$('finEditAmount').value='';fin$('finEditPassword').value='';fin$('finEditReason').value='';fin$('finCurrentPassword').value='';fin$('finRecoveryNew').value='';fin$('finRecoveryNew2').value='';finPinClear()}
 function finEnter(){finClose();finEntered=true;const meta=finStored();fin$('finSetup').classList.toggle('hidden',!!meta);fin$('finUnlock').classList.toggle('hidden',!meta);fin$('finRecovery').classList.add('hidden');fin$('finRecoveryOnce').classList.add('hidden');if(!window.crypto||!crypto.subtle){fin$('finGateError').textContent='Secure offline encryption is unavailable in this browser. Use your installed HTTPS PWA.';return}finPinRefresh();setTimeout(()=>{if(currentDesk==='financial')finPinFocus(meta?'finUnlockPass':'finSetupPassword')},30)}
 async function finSetup(){if(finBusy)return;const pass=fin$('finSetupPassword').value,pass2=fin$('finSetupPassword2').value,raw=fin$('finAnchorInput').value,mode=fin$('finAnchorMode').value;if(!finValidPin(pass)||pass!==pass2)return finError('Enter the same four-digit PIN in both fields.');if(!raw.trim()||!Number.isFinite(Number(raw))||Number(raw)<0||Number(raw)>1e12)return finError('Enter a valid starting bank amount (zero is allowed).');finBusy=true;try{if(finStored())throw Error('A financial password is already configured');const recovery=finKeyText(),rawKey=finRandom(32),key=await crypto.subtle.importKey('raw',rawKey,{name:'AES-GCM'},false,['encrypt','decrypt']);const asOf=mode==='day'?new Date(finCurrentDate()+'T00:00:00').toISOString():new Date().toISOString();const data=finVaultBase(finK(raw),asOf);const meta={version:2,pinLength:4,pw:await finWrap(rawKey,pass),recovery:await finWrap(rawKey,finNormalizeKey(recovery)),vault:await finSeal(key,new TextEncoder().encode(JSON.stringify(data))),createdAt:new Date().toISOString()};storeSet(FIN_META,JSON.stringify(meta));await RS.whenSaved();finKey=key;finPrivate=data;fin$('finRecoveryValue').textContent=recovery;fin$('finRecoveryOnce').classList.remove('hidden');fin$('finSetup').classList.add('hidden');fin$('finUnlock').classList.add('hidden');fin$('finRecovery').classList.add('hidden');fin$('finGate').classList.remove('hidden');fin$('finGateError').textContent='Save your recovery key somewhere outside this phone. It will not be shown again.'}catch(e){finError(e.message)}finally{finBusy=false}}
 function finError(msg){fin$('finGateError').textContent=msg}
-async function finUnlock(usingRecovery=false){if(finBusy)return;const pass=usingRecovery?finNormalizeKey(fin$('finRecoverKey').value):fin$('finUnlockPass').value;const meta=finStored();if(!meta||!pass)return finError('Enter your password or recovery key.');finBusy=true;try{const raw=await finUnwrap(usingRecovery?meta.recovery:meta.pw,pass);const key=await crypto.subtle.importKey('raw',raw,{name:'AES-GCM'},false,['encrypt','decrypt']);const decoded=new TextDecoder().decode(await finOpen(key,meta.vault)),data=JSON.parse(decoded);if(!data.anchor||!Array.isArray(data.events)||!Array.isArray(data.reviews))throw Error('Invalid financial records');finKey=key;finPrivate=data;finPinClear(['finUnlockPass']);fin$('finRecoverKey').value='';fin$('finGate').classList.add('hidden');fin$('finMain').classList.remove('hidden');finShow('overview');await backupRestoreFinancialWorking();finReminder();if(usingRecovery){fin$('finAdminPanel').classList.remove('hidden');fin$('finGateError').textContent='';finShow('admin');fin$('finAdminNotice').textContent='Recovered successfully. Set a new password and replace your recovery key.'}}catch(e){finError('Unable to unlock. Check your password/recovery key and data.');finPinClear(['finUnlockPass'])}finally{finBusy=false}}
+async function finUnlock(usingRecovery=false){if(finBusy)return;const pass=usingRecovery?finNormalizeKey(fin$('finRecoverKey').value):fin$('finUnlockPass').value;const meta=finStored(),epoch=finDeskEpoch;if(!meta||!pass)return finError('Enter your password or recovery key.');await finDeskExitSaved;if(finBusy||currentDesk!=='financial'||epoch!==finDeskEpoch)return;finBusy=true;try{const raw=await finUnwrap(usingRecovery?meta.recovery:meta.pw,pass);const key=await crypto.subtle.importKey('raw',raw,{name:'AES-GCM'},false,['encrypt','decrypt']);const decoded=new TextDecoder().decode(await finOpen(key,meta.vault)),data=JSON.parse(decoded);if(!data.anchor||!Array.isArray(data.events)||!Array.isArray(data.reviews))throw Error('Invalid financial records');finKey=key;finPrivate=data;finPinClear(['finUnlockPass']);fin$('finRecoverKey').value='';fin$('finGate').classList.add('hidden');fin$('finMain').classList.remove('hidden');finShow('overview');await backupRestoreFinancialWorking();finReminder();if(usingRecovery){fin$('finAdminPanel').classList.remove('hidden');fin$('finGateError').textContent='';finShow('admin');fin$('finAdminNotice').textContent='Recovered successfully. Set a new password and replace your recovery key.'}}catch(e){finError('Unable to unlock. Check your password/recovery key and data.');finPinClear(['finUnlockPass'])}finally{finBusy=false}}
 function finTxImpact(t){if(!t||!t.type)return 0;const a=finK(n(t.amount)),f=t.paymentFunding;if(!Number.isSafeInteger(a))return 0;switch(t.type){case'sale_transfer':case'sale_cash_banked':{const received=finK(n(t.amount)+txChangeOwed(t));return Number.isSafeInteger(received)?received:0}case'debt_transfer':case'remit_cash':return a;case'sale_split':return finK(n(t.splitBank));case'purchase_transfer':case'supplier_pay_bank':case'expense_bank':return f==='external'?0:-a;case'refund_bank':case'bank_to_retail':return -a;default:return 0}}
 function finTransactionRows(){
  const out=[],used=new Set(),days=new Map();
