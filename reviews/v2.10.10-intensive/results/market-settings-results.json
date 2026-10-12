@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "name": "Market fixture: 500 inventory products, two independent supplier lists and 200 ready purchases",
+      "passed": true,
+      "elapsedMs": 736,
+      "evidence": {
+        "products": 500,
+        "lists": 2,
+        "readyPurchases": 200
+      }
+    },
+    {
+      "name": "Applying 100 packed Market purchases updates only the chosen supplier list, stock and payable",
+      "passed": true,
+      "elapsedMs": 780,
+      "evidence": {
+        "applyMs": 362,
+        "transactions": 101,
+        "unitsPurchased": 2500,
+        "outstanding": 6325
+      }
+    },
+    {
+      "name": "Supplier overpayment and wrong-business-date payment are rejected without changes",
+      "passed": true,
+      "elapsedMs": 335,
+      "evidence": {
+        "overpaymentRejected": true,
+        "wrongDateRejected": true
+      }
+    },
+    {
+      "name": "External, business-bank and business-cash supplier payments reconcile the full purchase exactly once",
+      "passed": true,
+      "elapsedMs": 255,
+      "evidence": {
+        "transactions": 104,
+        "bankMovement": -4100,
+        "retailCash": 97675,
+        "payable": 0
+      }
+    },
+    {
+      "name": "Mixed payment methods cannot be applied until a single Paid Via method is chosen",
+      "passed": true,
+      "elapsedMs": 725,
+      "evidence": {
+        "transactions": 204,
+        "history": 200,
+        "retailCash": 89250
+      }
+    },
+    {
+      "name": "Financial balance agrees with supplier bank payments; complete Market restore preserves purchases and packs",
+      "passed": true,
+      "elapsedMs": 4277,
+      "evidence": {
+        "products": 500,
+        "marketHistory": 200,
+        "bankBalance": 45900
+      }
+    },
+    {
+      "name": "Settings repricing affects default markup only, preserving manual/custom prices and historical sales",
+      "passed": false,
+      "elapsedMs": 1374,
+      "error": "AssertionError [ERR_ASSERTION]: Default essentials price: actual 120, expected 130\n    at closeMoney (/workspace/roseachy-v2.10.10-intensive-review/tests/market-settings.cjs:32:44)\n    at /workspace/roseachy-v2.10.10-intensive-review/tests/market-settings.cjs:61:1499\n    at async check (/workspace/roseachy-v2.10.10-intensive-review/tests/market-settings.cjs:18:73)\n    at async /workspace/roseachy-v2.10.10-intensive-review/tests/market-settings.cjs:60:2"
+    },
+    {
+      "name": "500 quantity-pricing combinations match independent bundle/remainder arithmetic",
+      "passed": true,
+      "elapsedMs": 655,
+      "evidence": {
+        "combinations": 500
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "bulkMarketApplyMs": 362
+  },
+  "passed": 7,
+  "failed": 1
+}

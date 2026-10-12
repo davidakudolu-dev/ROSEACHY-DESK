@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "file": "index.html inline script 0",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 1",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 2",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 3",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 4",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 5",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 6",
+      "passed": true
+    },
+    {
+      "file": "index.html inline script 8",
+      "passed": true
+    },
+    {
+      "file": "js/pwa.js",
+      "passed": true
+    },
+    {
+      "file": "sw.js",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "unchangedApplicationFiles": 38,
+  "sourceModified": false
+}
