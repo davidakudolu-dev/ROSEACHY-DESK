@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "name": "Upgrading an enrolled installation publishes previously omitted Market records without resetting its checkpoint",
+      "passed": true,
+      "elapsedMs": 3319,
+      "evidence": {
+        "checkpointPreserved": "checkpoint-2b244ce9-c5e7-41a5-a906-2a0f400afaa2",
+        "oldRecordsPromoted": true,
+        "budget": 12345
+      }
+    },
+    {
+      "name": "Pending plaintext exchange is encrypted locally and resumes after locking without leaking bank text in a Full Backup",
+      "passed": true,
+      "elapsedMs": 3792,
+      "evidence": {
+        "exchangeIntentionallyPlaintext": true,
+        "pendingEncrypted": true,
+        "resumeAfterRestart": true,
+        "bank": 50025
+      }
+    },
+    {
+      "name": "Supplier overpayment across independent devices is rejected atomically with both original payment records retained locally",
+      "passed": true,
+      "elapsedMs": 3226,
+      "evidence": {
+        "overpayment": 30,
+        "partialMergePrevented": true,
+        "requiresPaymentReview": true
+      }
+    },
+    {
+      "name": "Legacy encrypted envelopes and altered plaintext checksums are rejected before imports",
+      "passed": true,
+      "elapsedMs": 827,
+      "evidence": {
+        "legacyFormatRejectedClearly": true,
+        "checksumTamperRejected": true
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

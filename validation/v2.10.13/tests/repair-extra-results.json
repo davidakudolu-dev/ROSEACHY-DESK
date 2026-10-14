@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "name": "POS edit failure preserves edit identity and fee method; retry updates once and survives reload",
+      "passed": true,
+      "elapsedMs": 1850,
+      "evidence": {
+        "retainedForm": true,
+        "sameId": true,
+        "records": 1
+      }
+    },
+    {
+      "name": "Rejected Financial PIN and recovery-key writes preserve the old vault in memory and after reload",
+      "passed": true,
+      "elapsedMs": 1816,
+      "evidence": {
+        "originalPinWorks": true,
+        "vaultUnchanged": true,
+        "noQueuedCredentialChange": true
+      }
+    },
+    {
+      "name": "Financial review evidence and public status roll back together on a second-domain write failure",
+      "passed": true,
+      "elapsedMs": 1539,
+      "evidence": {
+        "privateAndPublicRollback": true
+      }
+    },
+    {
+      "name": "Failed internal Financial transfer cannot become a ghost transfer when storage recovers",
+      "passed": true,
+      "elapsedMs": 1890,
+      "evidence": {
+        "rejectedTransferAbsent": true,
+        "retainedForm": true
+      }
+    },
+    {
+      "name": "Local-storage fallback POS failure rolls back its journal and retry saves one complete record",
+      "passed": true,
+      "elapsedMs": 1262,
+      "evidence": {
+        "fallbackJournalCleared": true,
+        "records": 1
+      }
+    },
+    {
+      "name": "Debounced markup fields retain independent pending values while a slow save renders Settings",
+      "passed": true,
+      "elapsedMs": 3073,
+      "evidence": {
+        "bothDebouncesSaved": true
+      }
+    },
+    {
+      "name": "Fallback journal survives a failed rollback and recovers before a later unrelated save",
+      "passed": true,
+      "elapsedMs": 949,
+      "evidence": {
+        "rollbackJournalRecoveredBeforeNextSave": true
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "name": "Market deleted lists and their unfinished purchase details synchronize and restore on the other device",
+      "passed": true,
+      "elapsedMs": 4314,
+      "evidence": {
+        "deletedListAndPurchasePreserved": true,
+        "restoredAcrossDevices": true
+      }
+    },
+    {
+      "name": "Market session history and budget changes transfer without changing purchased stock or accounting",
+      "passed": true,
+      "elapsedMs": 3101,
+      "evidence": {
+        "sessionPreserved": true,
+        "budget": 25000
+      }
+    },
+    {
+      "name": "A later edit after receiving a high-sequence event is causally ordered without a false conflict",
+      "passed": true,
+      "elapsedMs": 2853,
+      "evidence": {
+        "causalOrderPreserved": true,
+        "unnecessaryConflict": false
+      }
+    },
+    {
+      "name": "A merge uses one atomic commit for records, event IDs and receipt metadata",
+      "passed": true,
+      "elapsedMs": 2569,
+      "evidence": {
+        "receiptAndEventsSameTransaction": true,
+        "stock": 74
+      }
+    },
+    {
+      "name": "An exhausted market advance rejects a larger purchase without partial stock, history or cash changes",
+      "passed": true,
+      "elapsedMs": 2660,
+      "evidence": {
+        "partialPurchaseRejected": true,
+        "availableFunds": 20
+      }
+    },
+    {
+      "name": "Two devices spending the same advance retain purchases and flag the resulting funding shortage",
+      "passed": true,
+      "elapsedMs": 3134,
+      "evidence": {
+        "deficit": 60,
+        "bothPurchasesPreserved": true
+      }
+    },
+    {
+      "name": "PIN session expiry displays an unlock form in the already-open Smart Sync screen",
+      "passed": true,
+      "elapsedMs": 1181,
+      "evidence": {
+        "reauthorizationAvailable": true
+      }
+    },
+    {
+      "name": "Selected recipient exports only unacknowledged events and duplicate receipts do not add stock",
+      "passed": true,
+      "elapsedMs": 3513,
+      "evidence": {
+        "recipientMissingEvents": 0,
+        "stock": 74
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

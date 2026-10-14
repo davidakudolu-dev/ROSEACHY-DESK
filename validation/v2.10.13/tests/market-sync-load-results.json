@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "name": "Saved purchase work on an automatic Low Stock list transfers without committing stock or cash",
+      "passed": true,
+      "elapsedMs": 2762,
+      "evidence": {
+        "unfinishedPurchasePreserved": true,
+        "noPrematureStockOrExpense": true
+      }
+    },
+    {
+      "name": "120 products with a 30-item supplier purchase and 60 independent sales reconcile exact stock, cash, liability and dedupe",
+      "passed": true,
+      "elapsedMs": 36516,
+      "evidence": {
+        "products": 120,
+        "purchasedUnits": 720,
+        "soldUnits": 120,
+        "remainingUnits": 30600,
+        "transactions": 91,
+        "cash": 99320,
+        "payable": 3220,
+        "twoRoundTripsMs": 14153
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "bulkExchangeMs": 14153
+  }
+}

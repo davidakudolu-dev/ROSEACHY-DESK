@@ -1,0 +1,258 @@
+{
+  "light": [
+    {
+      "selector": "#marketReviewOverlay .marketPanel h3",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#marketPurchaseSupplierBox",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketPurchaseSupplierBox label",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketSupplierSelected",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketPurchaseTotalDisplay",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketPurchaseBalance",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketPurchaseBalance b",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketAmountPaidFunding",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#marketAmountPaidVia",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#supplierDropOption",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#syncOverlay .syncPanel",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay h3",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay #syncStatus",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay .syncWarning",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay label",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay summary",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay #syncLabel",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay #syncButton",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#syncOverlay #syncPrimary",
+      "contrast": 5.21,
+      "fg": "rgb(19, 21, 38)",
+      "bg": "rgb(247, 78, 28)"
+    },
+    {
+      "selector": "#syncOverlay #syncClose",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    },
+    {
+      "selector": "#syncOverlay .syncConflict span",
+      "contrast": 13.43,
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)"
+    }
+  ],
+  "dark": [
+    {
+      "selector": "#marketReviewOverlay .marketPanel h3",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#marketPurchaseSupplierBox",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketPurchaseSupplierBox label",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketSupplierSelected",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketPurchaseTotalDisplay",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketPurchaseBalance",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketPurchaseBalance b",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketAmountPaidFunding",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#marketAmountPaidVia",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#supplierDropOption",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#syncOverlay .syncPanel",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay h3",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay #syncStatus",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay .syncWarning",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay label",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay summary",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay #syncLabel",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay #syncButton",
+      "contrast": 15.54,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)"
+    },
+    {
+      "selector": "#syncOverlay #syncPrimary",
+      "contrast": 5.21,
+      "fg": "rgb(19, 21, 38)",
+      "bg": "rgb(247, 78, 28)"
+    },
+    {
+      "selector": "#syncOverlay #syncClose",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    },
+    {
+      "selector": "#syncOverlay .syncConflict span",
+      "contrast": 18.06,
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(19, 21, 38)"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "filename": "Roseachy_v2_10_13_Market_Sync_Integrity_Cloudflare_PWA.zip",
+  "bytes": 415160,
+  "sha256": "12b19ea61e4d04063d1be1a2ce035b8a6eab92ee016545f82cdb0d7f4bd1fc94",
+  "entries": 54,
+  "originalFilesRetained": 51,
+  "modifiedOriginalFiles": [
+    "index.html",
+    "sw.js"
+  ],
+  "applicationSHA256": "e967cc0f0bb44180efdc05a9a70e21f1555796c083b25a3108eccb90450d99bb"
+}

@@ -1,0 +1,1432 @@
+{
+  "release": "2.10.13 Market and Smart Sync integrity review",
+  "reviewDate": "2026-10-14",
+  "sourceUpload": "Roseachy_v2_10_12_Ember_Smart_Sync_and_Smooth_Swipe_Cloudflare_PWA.zip",
+  "sourceSHA256": "4cd570dbefa6f0c0507627f3cd99e364351b6f62604cd759e6a215c0183063f4",
+  "scenarioGroupsPassed": 113,
+  "failed": 0,
+  "javascriptSyntaxChecksPassed": 11,
+  "syncProtocol": 2,
+  "databaseSchema": 8,
+  "applicationSHA256": "e967cc0f0bb44180efdc05a9a70e21f1555796c083b25a3108eccb90450d99bb",
+  "suites": {
+    "smart-sync": {
+      "results": [
+        {
+          "name": "Initial reconciliation creates a shared checkpoint, preserves identities and requires two-way acknowledgement",
+          "passed": true,
+          "elapsedMs": 2949,
+          "evidence": {
+            "bothAcknowledged": true,
+            "distinctIdentities": true
+          }
+        },
+        {
+          "name": "Market/stock purchase +30 while shop sells 15 converges from 50 to 65 without financial duplication",
+          "passed": true,
+          "elapsedMs": 3753,
+          "evidence": {
+            "finalStock": 65,
+            "transactions": 2,
+            "cash": 100000
+          }
+        },
+        {
+          "name": "Unequal six-month and two-month histories preserve 180 saved days without replaying their stock movements",
+          "passed": true,
+          "elapsedMs": 6822,
+          "evidence": {
+            "savedDays": 180,
+            "stock": 50,
+            "historicalMovementsNotReplayed": true
+          }
+        },
+        {
+          "name": "Simultaneous independent sales 10 and 8 retain both records and converge to 32 units",
+          "passed": true,
+          "elapsedMs": 3704,
+          "evidence": {
+            "stock": 32,
+            "transactions": 2
+          }
+        },
+        {
+          "name": "Restock 24, sale 12 and damage 3 from 40 units converge to 49 with permanent adjustment events",
+          "passed": true,
+          "elapsedMs": 3648,
+          "evidence": {
+            "stock": 49,
+            "damageRetained": true
+          }
+        },
+        {
+          "name": "Duplicate file import, renamed reimport, restart and repeated exchange never replay a 24-unit purchase",
+          "passed": true,
+          "elapsedMs": 5389,
+          "evidence": {
+            "stock": 74,
+            "records": 1,
+            "reimports": 5
+          }
+        },
+        {
+          "name": "Conflicting current selling prices require approval and never rewrite prior sale prices",
+          "passed": true,
+          "elapsedMs": 3959,
+          "evidence": {
+            "approvedPrice": 700,
+            "historicalSale": 20
+          }
+        },
+        {
+          "name": "Market advance, cash sales, funded purchase and return reconcile to 85000 without double deduction",
+          "passed": true,
+          "elapsedMs": 3806,
+          "evidence": {
+            "cash": 85000,
+            "purchases": 35000,
+            "advanceRemaining": 0
+          }
+        },
+        {
+          "name": "Concurrent absolute count and sale are flagged; a verified correction keeps both transactions and future sales",
+          "passed": true,
+          "elapsedMs": 4922,
+          "evidence": {
+            "countReviewed": true,
+            "afterFutureSales": 40
+          }
+        },
+        {
+          "name": "Thirty days of offline transactions preserve 120 sales and converge using sequences despite clock skew",
+          "passed": true,
+          "elapsedMs": 33536,
+          "evidence": {
+            "days": 30,
+            "sales": 120,
+            "stock": 880,
+            "clockUsedOnlyAsContext": true
+          }
+        },
+        {
+          "name": "A storage failure during merge leaves all business domains and applied IDs unchanged; retry succeeds once",
+          "passed": true,
+          "elapsedMs": 2742,
+          "evidence": {
+            "allDomainsAtomic": true,
+            "retryAppliedOnce": true
+          }
+        },
+        {
+          "name": "Wrong-business, corrupted plaintext payload, unsupported versions and Full Backup through sync are rejected unchanged",
+          "passed": true,
+          "elapsedMs": 3306,
+          "evidence": {
+            "wrongBusinessRejected": true,
+            "corruptionRejected": true,
+            "backupNotSync": true
+          }
+        },
+        {
+          "name": "Independently created similar products with different packaging require explicit variant matching",
+          "passed": true,
+          "elapsedMs": 3255,
+          "evidence": {
+            "variantsPreserved": 2,
+            "automaticNameMergePrevented": true
+          }
+        },
+        {
+          "name": "Legacy transactions without original IDs remain uncertain until explicitly reconciled",
+          "passed": true,
+          "elapsedMs": 1948,
+          "evidence": {
+            "uncertainNotAutoMerged": true,
+            "legacyRecordsRetained": true
+          }
+        },
+        {
+          "name": "Sales recorded after recovery snapshots but before checkpoint acceptance survive enrollment and follow-up sync",
+          "passed": true,
+          "elapsedMs": 3708,
+          "evidence": {
+            "lateSalesPreserved": 2,
+            "stock": 45
+          }
+        },
+        {
+          "name": "Concurrent sales exceeding shared stock retain both sales and expose a shortage instead of deleting activity",
+          "passed": true,
+          "elapsedMs": 3775,
+          "evidence": {
+            "legitimateSales": 2,
+            "shortage": 10,
+            "availableStock": 0
+          }
+        },
+        {
+          "name": "Supplier credit and independent partial payments reconcile purchase, cash and liability exactly once",
+          "passed": true,
+          "elapsedMs": 3914,
+          "evidence": {
+            "purchase": 100,
+            "paid": 60,
+            "payable": 40,
+            "cash": 99940
+          }
+        },
+        {
+          "name": "Sale + Cash Out transfers 1500 electronic, records 1100 retail sales and pays 400 cash once",
+          "passed": true,
+          "elapsedMs": 3569,
+          "evidence": {
+            "retailSales": 1100,
+            "cashOut": 400,
+            "electronicReceived": 1500
+          }
+        },
+        {
+          "name": "Post-sync Full Backup restores records, checkpoint and applied-event protection while keeping a fresh installation identity",
+          "passed": true,
+          "elapsedMs": 4627,
+          "evidence": {
+            "identityNotCopied": true,
+            "checkpointAndEventsRestored": true,
+            "requiresEnrollment": true
+          }
+        },
+        {
+          "name": "Two truly independent transactions with identical product, quantity, amount and timestamp are both retained",
+          "passed": true,
+          "elapsedMs": 3592,
+          "evidence": {
+            "separateIdsRetained": 2,
+            "stock": 44
+          }
+        },
+        {
+          "name": "Native sale deletion becomes a permanent amendment/tombstone, restores stock once and cannot resurrect through repeated exchange",
+          "passed": true,
+          "elapsedMs": 5212,
+          "evidence": {
+            "stockRestoredOnce": 50,
+            "tombstoneRetained": true
+          }
+        },
+        {
+          "name": "A to B to enrolled C to A exchange converges without duplicate events or copying installation identity",
+          "passed": true,
+          "elapsedMs": 6813,
+          "evidence": {
+            "devices": 3,
+            "stock": 41,
+            "transactions": 3
+          }
+        },
+        {
+          "name": "Interrupted initial reconciliation reloads as pending and resumes the approved proposal without duplicate activities",
+          "passed": true,
+          "elapsedMs": 3954,
+          "evidence": {
+            "resumed": true,
+            "noFalseCompletion": true
+          }
+        },
+        {
+          "name": "Same event identifier with different content and missing sequence dependencies are integrity conflicts",
+          "passed": true,
+          "elapsedMs": 4688,
+          "evidence": {
+            "sameIdDifferentContentRejected": true,
+            "sequenceGapRejected": true
+          }
+        },
+        {
+          "name": "Purchased-but-not-received stock stays unavailable, and its later receipt applies once on both devices",
+          "passed": true,
+          "elapsedMs": 3845,
+          "evidence": {
+            "beforeReceipt": 50,
+            "afterReceipt": 74,
+            "receiptAppliedOnce": true
+          }
+        },
+        {
+          "name": "Financial movements remain locally encrypted, are plaintext in the new exchange format, merge once and require PIN",
+          "passed": true,
+          "elapsedMs": 3131,
+          "evidence": {
+            "localReasonEncrypted": true,
+            "exchangeIsPlaintext": true,
+            "bank": 50025,
+            "authorizationRequired": true
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {}
+    },
+    "deep-review": {
+      "results": [
+        {
+          "name": "Market deleted lists and their unfinished purchase details synchronize and restore on the other device",
+          "passed": true,
+          "elapsedMs": 4314,
+          "evidence": {
+            "deletedListAndPurchasePreserved": true,
+            "restoredAcrossDevices": true
+          }
+        },
+        {
+          "name": "Market session history and budget changes transfer without changing purchased stock or accounting",
+          "passed": true,
+          "elapsedMs": 3101,
+          "evidence": {
+            "sessionPreserved": true,
+            "budget": 25000
+          }
+        },
+        {
+          "name": "A later edit after receiving a high-sequence event is causally ordered without a false conflict",
+          "passed": true,
+          "elapsedMs": 2853,
+          "evidence": {
+            "causalOrderPreserved": true,
+            "unnecessaryConflict": false
+          }
+        },
+        {
+          "name": "A merge uses one atomic commit for records, event IDs and receipt metadata",
+          "passed": true,
+          "elapsedMs": 2569,
+          "evidence": {
+            "receiptAndEventsSameTransaction": true,
+            "stock": 74
+          }
+        },
+        {
+          "name": "An exhausted market advance rejects a larger purchase without partial stock, history or cash changes",
+          "passed": true,
+          "elapsedMs": 2660,
+          "evidence": {
+            "partialPurchaseRejected": true,
+            "availableFunds": 20
+          }
+        },
+        {
+          "name": "Two devices spending the same advance retain purchases and flag the resulting funding shortage",
+          "passed": true,
+          "elapsedMs": 3134,
+          "evidence": {
+            "deficit": 60,
+            "bothPurchasesPreserved": true
+          }
+        },
+        {
+          "name": "PIN session expiry displays an unlock form in the already-open Smart Sync screen",
+          "passed": true,
+          "elapsedMs": 1181,
+          "evidence": {
+            "reauthorizationAvailable": true
+          }
+        },
+        {
+          "name": "Selected recipient exports only unacknowledged events and duplicate receipts do not add stock",
+          "passed": true,
+          "elapsedMs": 3513,
+          "evidence": {
+            "recipientMissingEvents": 0,
+            "stock": 74
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {}
+    },
+    "upgrade-private": {
+      "results": [
+        {
+          "name": "Upgrading an enrolled installation publishes previously omitted Market records without resetting its checkpoint",
+          "passed": true,
+          "elapsedMs": 3319,
+          "evidence": {
+            "checkpointPreserved": "checkpoint-2b244ce9-c5e7-41a5-a906-2a0f400afaa2",
+            "oldRecordsPromoted": true,
+            "budget": 12345
+          }
+        },
+        {
+          "name": "Pending plaintext exchange is encrypted locally and resumes after locking without leaking bank text in a Full Backup",
+          "passed": true,
+          "elapsedMs": 3792,
+          "evidence": {
+            "exchangeIntentionallyPlaintext": true,
+            "pendingEncrypted": true,
+            "resumeAfterRestart": true,
+            "bank": 50025
+          }
+        },
+        {
+          "name": "Supplier overpayment across independent devices is rejected atomically with both original payment records retained locally",
+          "passed": true,
+          "elapsedMs": 3226,
+          "evidence": {
+            "overpayment": 30,
+            "partialMergePrevented": true,
+            "requiresPaymentReview": true
+          }
+        },
+        {
+          "name": "Legacy encrypted envelopes and altered plaintext checksums are rejected before imports",
+          "passed": true,
+          "elapsedMs": 827,
+          "evidence": {
+            "legacyFormatRejectedClearly": true,
+            "checksumTamperRejected": true
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {}
+    },
+    "additional": {
+      "results": [
+        {
+          "name": "Independent prepared Low Stock drafts for the same product survive exchange and restart as separate records",
+          "passed": true,
+          "elapsedMs": 5028,
+          "evidence": {
+            "preparedDrafts": 2,
+            "quantities": [
+              12,
+              24
+            ],
+            "stockUnaffected": 50
+          }
+        },
+        {
+          "name": "Fallback-storage merge rolls back an interrupted write then applies a purchase once after retry",
+          "passed": true,
+          "elapsedMs": 3266,
+          "evidence": {
+            "fallbackRollback": true,
+            "retryAndRestartDedupe": true,
+            "stock": 74
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {}
+    },
+    "market-sync-load": {
+      "results": [
+        {
+          "name": "Saved purchase work on an automatic Low Stock list transfers without committing stock or cash",
+          "passed": true,
+          "elapsedMs": 2762,
+          "evidence": {
+            "unfinishedPurchasePreserved": true,
+            "noPrematureStockOrExpense": true
+          }
+        },
+        {
+          "name": "120 products with a 30-item supplier purchase and 60 independent sales reconcile exact stock, cash, liability and dedupe",
+          "passed": true,
+          "elapsedMs": 36516,
+          "evidence": {
+            "products": 120,
+            "purchasedUnits": 720,
+            "soldUnits": 120,
+            "remainingUnits": 30600,
+            "transactions": 91,
+            "cash": 99320,
+            "payable": 3220,
+            "twoRoundTripsMs": 14153
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {
+        "bulkExchangeMs": 14153
+      }
+    },
+    "market-settings": {
+      "results": [
+        {
+          "name": "Market fixture: 500 inventory products, two independent supplier lists and 200 ready purchases",
+          "passed": true,
+          "elapsedMs": 928,
+          "evidence": {
+            "products": 500,
+            "lists": 2,
+            "readyPurchases": 200
+          }
+        },
+        {
+          "name": "Applying 100 packed Market purchases updates only the chosen supplier list, stock and payable",
+          "passed": true,
+          "elapsedMs": 999,
+          "evidence": {
+            "applyMs": 507,
+            "transactions": 101,
+            "unitsPurchased": 2500,
+            "outstanding": 6325
+          }
+        },
+        {
+          "name": "Supplier overpayment and wrong-business-date payment are rejected without changes",
+          "passed": true,
+          "elapsedMs": 394,
+          "evidence": {
+            "overpaymentRejected": true,
+            "wrongDateRejected": true
+          }
+        },
+        {
+          "name": "External, business-bank and business-cash supplier payments reconcile the full purchase exactly once",
+          "passed": true,
+          "elapsedMs": 860,
+          "evidence": {
+            "transactions": 104,
+            "bankMovement": -4100,
+            "retailCash": 97675,
+            "payable": 0
+          }
+        },
+        {
+          "name": "Mixed payment methods cannot be applied until a single Paid Via method is chosen",
+          "passed": true,
+          "elapsedMs": 1181,
+          "evidence": {
+            "transactions": 204,
+            "history": 200,
+            "retailCash": 89250
+          }
+        },
+        {
+          "name": "Financial balance agrees with supplier bank payments; complete Market restore preserves purchases and packs",
+          "passed": true,
+          "elapsedMs": 8251,
+          "evidence": {
+            "products": 500,
+            "marketHistory": 200,
+            "bankBalance": 45900
+          }
+        },
+        {
+          "name": "Settings repricing affects default markup only, preserving manual/custom prices and historical sales",
+          "passed": true,
+          "elapsedMs": 1757,
+          "evidence": {
+            "prices": [
+              {
+                "id": "default-pharm",
+                "price": 110.5
+              },
+              {
+                "id": "default-ess",
+                "price": 130
+              },
+              {
+                "id": "custom",
+                "price": 155
+              },
+              {
+                "id": "manual",
+                "price": 777
+              }
+            ],
+            "originalSale": 130
+          }
+        },
+        {
+          "name": "500 quantity-pricing combinations match independent bundle/remainder arithmetic",
+          "passed": true,
+          "elapsedMs": 792,
+          "evidence": {
+            "combinations": 500
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {
+        "bulkMarketApplyMs": 507
+      },
+      "passed": 8,
+      "failed": 0
+    },
+    "backup": {
+      "results": [
+        {
+          "name": "Create business fixtures using existing Stock, Sales, POS and Market handlers",
+          "passed": true
+        },
+        {
+          "name": "Encrypted Financial vault, bank movement and unfinished Financial form fixture",
+          "passed": true
+        },
+        {
+          "name": "Both existing buttons export identical complete business payloads and valid checksums",
+          "passed": true
+        },
+        {
+          "name": "Restore complete backup on an empty profile through the real import-file handler",
+          "passed": true
+        },
+        {
+          "name": "Financial records and encrypted unfinished movement restore after normal PIN unlock",
+          "passed": true
+        },
+        {
+          "name": "Repeated imports replace records without duplicate sales, POS, Market purchases or notes",
+          "passed": true
+        },
+        {
+          "name": "Live unheld sale, POS input and stock adjustment are captured and restored durably",
+          "passed": true
+        },
+        {
+          "name": "Held purchase contents and captured product identity round-trip",
+          "passed": true
+        },
+        {
+          "name": "Unsaved Market purchase modal restores its values and original editing context",
+          "passed": true
+        },
+        {
+          "name": "Checksum, future format, duplicate notes, bad Market payments and invalid POS are rejected",
+          "passed": true
+        },
+        {
+          "name": "Malformed JSON import reports failure without changing any records",
+          "passed": true
+        },
+        {
+          "name": "Cancelled/file-failed exports notify correctly and re-enable both buttons",
+          "passed": true
+        },
+        {
+          "name": "Cancelled safety save leaves business records unchanged",
+          "passed": true
+        },
+        {
+          "name": "Injected IndexedDB failure rolls back and reports verified recovery",
+          "passed": true
+        },
+        {
+          "name": "Failed post-restore verification triggers checked recovery, not a false success",
+          "passed": true
+        },
+        {
+          "name": "Concurrent clicks on Sales and Settings create one export",
+          "passed": true
+        },
+        {
+          "name": "Valid legacy full backup without working fields or checksum remains supported",
+          "passed": true
+        },
+        {
+          "name": "Backup-file checker uses the same strict checksum and domain validation",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "passed": 18
+    },
+    "repair-extra": {
+      "results": [
+        {
+          "name": "POS edit failure preserves edit identity and fee method; retry updates once and survives reload",
+          "passed": true,
+          "elapsedMs": 1850,
+          "evidence": {
+            "retainedForm": true,
+            "sameId": true,
+            "records": 1
+          }
+        },
+        {
+          "name": "Rejected Financial PIN and recovery-key writes preserve the old vault in memory and after reload",
+          "passed": true,
+          "elapsedMs": 1816,
+          "evidence": {
+            "originalPinWorks": true,
+            "vaultUnchanged": true,
+            "noQueuedCredentialChange": true
+          }
+        },
+        {
+          "name": "Financial review evidence and public status roll back together on a second-domain write failure",
+          "passed": true,
+          "elapsedMs": 1539,
+          "evidence": {
+            "privateAndPublicRollback": true
+          }
+        },
+        {
+          "name": "Failed internal Financial transfer cannot become a ghost transfer when storage recovers",
+          "passed": true,
+          "elapsedMs": 1890,
+          "evidence": {
+            "rejectedTransferAbsent": true,
+            "retainedForm": true
+          }
+        },
+        {
+          "name": "Local-storage fallback POS failure rolls back its journal and retry saves one complete record",
+          "passed": true,
+          "elapsedMs": 1262,
+          "evidence": {
+            "fallbackJournalCleared": true,
+            "records": 1
+          }
+        },
+        {
+          "name": "Debounced markup fields retain independent pending values while a slow save renders Settings",
+          "passed": true,
+          "elapsedMs": 3073,
+          "evidence": {
+            "bothDebouncesSaved": true
+          }
+        },
+        {
+          "name": "Fallback journal survives a failed rollback and recovers before a later unrelated save",
+          "passed": true,
+          "elapsedMs": 949,
+          "evidence": {
+            "rollbackJournalRecoveredBeforeNextSave": true
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {}
+    },
+    "navigation": {
+      "results": [
+        {
+          "name": "Responsive phones/tablets/desktops and 767/768 breakpoint; original single rail",
+          "passed": true,
+          "elapsedMs": 1078,
+          "detail": [
+            {
+              "width": 320,
+              "height": 568,
+              "position": "fixed"
+            },
+            {
+              "width": 360,
+              "height": 800,
+              "position": "fixed"
+            },
+            {
+              "width": 390,
+              "height": 844,
+              "position": "fixed"
+            },
+            {
+              "width": 430,
+              "height": 932,
+              "position": "fixed"
+            },
+            {
+              "width": 667,
+              "height": 375,
+              "position": "fixed"
+            },
+            {
+              "width": 767,
+              "height": 900,
+              "position": "fixed"
+            },
+            {
+              "width": 768,
+              "height": 1024,
+              "position": "relative"
+            },
+            {
+              "width": 820,
+              "height": 1180,
+              "position": "relative"
+            },
+            {
+              "width": 1024,
+              "height": 768,
+              "position": "relative"
+            },
+            {
+              "width": 1440,
+              "height": 900,
+              "position": "relative"
+            }
+          ]
+        },
+        {
+          "name": "Phone rail remains visible while scrolling; bottom controls can clear the rail",
+          "passed": true,
+          "elapsedMs": 112
+        },
+        {
+          "name": "Slow committed swipe follows finger, reveals live neighbor, and coordinates indicator",
+          "passed": true,
+          "elapsedMs": 1286,
+          "detail": {
+            "active": "Tx",
+            "current": "matrix(1, 0, 0, 1, -75, 0)",
+            "next": "tabStock",
+            "rail": 784,
+            "labels": 2,
+            "inert": true,
+            "indicator": 25.259668350219727
+          }
+        },
+        {
+          "name": "Partial swipe rolls back without a history entry",
+          "passed": true,
+          "elapsedMs": 1319
+        },
+        {
+          "name": "Short flick recognition with script-generated touch events; native touch cancellation",
+          "passed": true,
+          "elapsedMs": 1857
+        },
+        {
+          "name": "Navigation boundaries have no wrap-around",
+          "passed": true,
+          "elapsedMs": 2268
+        },
+        {
+          "name": "Repeated native left/right swipes follow the visible order without wrap or residue",
+          "passed": true,
+          "elapsedMs": 6206
+        },
+        {
+          "name": "Vertical scrolling and diagonal gestures never switch tabs",
+          "passed": true,
+          "elapsedMs": 2076
+        },
+        {
+          "name": "Inputs, tables, horizontal scrollers, text selection and overlays retain their gestures",
+          "passed": true,
+          "elapsedMs": 3467
+        },
+        {
+          "name": "Existing tab taps and keyboard arrows share state and indicator",
+          "passed": true,
+          "elapsedMs": 704
+        },
+        {
+          "name": "Business fixture uses the existing stock creation UI",
+          "passed": true,
+          "elapsedMs": 302
+        },
+        {
+          "name": "Ongoing sale, POS fields, adjustment and filters survive tap/swipe/desk changes",
+          "passed": true,
+          "elapsedMs": 3486
+        },
+        {
+          "name": "Held transaction survives navigation without modifying stock or ledger",
+          "passed": true,
+          "elapsedMs": 2076
+        },
+        {
+          "name": "Market purchase overlay blocks swipes and unfinished purchase stays on return",
+          "passed": true,
+          "elapsedMs": 1169
+        },
+        {
+          "name": "Financial exit locks; unfinished amount and reason return after password; explicit Lock works",
+          "passed": true,
+          "elapsedMs": 677
+        },
+        {
+          "name": "Themes, light/dark modes, four existing rounding values and indicator bounds",
+          "passed": true,
+          "elapsedMs": 10285,
+          "detail": [
+            {
+              "theme": "midnightgold",
+              "mode": "light",
+              "activeContrast": 4.827390799616049,
+              "inactiveContrast": 7.12693630044778
+            },
+            {
+              "theme": "midnightgold",
+              "mode": "dark",
+              "activeContrast": 4.827390799616049,
+              "inactiveContrast": 12.662558757411423
+            },
+            {
+              "theme": "cobalt",
+              "mode": "light",
+              "activeContrast": 4.786810481852853,
+              "inactiveContrast": 7.105790667313781
+            },
+            {
+              "theme": "cobalt",
+              "mode": "dark",
+              "activeContrast": 4.786810481852853,
+              "inactiveContrast": 12.636346578513885
+            },
+            {
+              "theme": "pearl",
+              "mode": "light",
+              "activeContrast": 17.327230533884187,
+              "inactiveContrast": 15.097301851108336
+            },
+            {
+              "theme": "pearl",
+              "mode": "dark",
+              "activeContrast": 8.175999830860388,
+              "inactiveContrast": 17.895771354525774
+            },
+            {
+              "theme": "ember",
+              "mode": "light",
+              "activeContrast": 5.212079640504309,
+              "inactiveContrast": 13.431397340753838
+            },
+            {
+              "theme": "ember",
+              "mode": "dark",
+              "activeContrast": 5.212079640504309,
+              "inactiveContrast": 18.057624040819455
+            },
+            {
+              "theme": "ocean",
+              "mode": "light",
+              "activeContrast": 9.217246268899883,
+              "inactiveContrast": 10.317806537630794
+            },
+            {
+              "theme": "ocean",
+              "mode": "dark",
+              "activeContrast": 8.413914396443381,
+              "inactiveContrast": 11.96119947253894
+            },
+            {
+              "theme": "aubergine",
+              "mode": "light",
+              "activeContrast": 12.805332085953738,
+              "inactiveContrast": 11.226646467742615
+            },
+            {
+              "theme": "aubergine",
+              "mode": "dark",
+              "activeContrast": 10.711810032493846,
+              "inactiveContrast": 12.292127866931958
+            },
+            {
+              "theme": "deepblue",
+              "mode": "light",
+              "activeContrast": 15.18677436331002,
+              "inactiveContrast": 12.137085839609256
+            },
+            {
+              "theme": "deepblue",
+              "mode": "dark",
+              "activeContrast": 5.109835086435532,
+              "inactiveContrast": 13.317340334040441
+            },
+            {
+              "theme": "green",
+              "mode": "light",
+              "activeContrast": 6.278382830617127,
+              "inactiveContrast": 10.188121604687414
+            },
+            {
+              "theme": "green",
+              "mode": "dark",
+              "activeContrast": 5.758216070227179,
+              "inactiveContrast": 11.828713557777192
+            }
+          ]
+        },
+        {
+          "name": "Existing font-scale and border-width controls update navigation without clipping",
+          "passed": true,
+          "elapsedMs": 4551,
+          "detail": {
+            "fontSizes": [
+              11,
+              11.395,
+              12.04,
+              12.685,
+              13.33
+            ],
+            "borderLevels": [
+              0,
+              5,
+              100
+            ]
+          }
+        },
+        {
+          "name": "Reduced motion and animations off switch without finger tracking",
+          "passed": true,
+          "elapsedMs": 2654
+        },
+        {
+          "name": "Resize or Back during a gesture cancels cleanly and preserves input",
+          "passed": true,
+          "elapsedMs": 1184
+        },
+        {
+          "name": "Section scroll positions survive switches",
+          "passed": true,
+          "elapsedMs": 841
+        },
+        {
+          "name": "Mixed swipes/taps/menus use bounded Back; overlay closes before section changes",
+          "passed": true,
+          "elapsedMs": 1955
+        },
+        {
+          "name": "Repeated use leaves one rail, five panels, no preview residue and no business changes",
+          "passed": true,
+          "elapsedMs": 3072
+        },
+        {
+          "name": "Refresh loads same appearance and application version",
+          "passed": true,
+          "elapsedMs": 407
+        }
+      ],
+      "errors": [],
+      "passed": 23
+    },
+    "reliability": {
+      "results": [
+        {
+          "name": "Actual service-worker offline reload retains navigation and data",
+          "passed": true,
+          "detail": {
+            "cacheNames": [
+              "roseachy-shell-inventory-v27-2.10.13-market-sync-review-20261014"
+            ],
+            "offlineReload": true
+          }
+        },
+        {
+          "name": "Emulated standalone PWA and Android WebView startup retain responsive placement",
+          "passed": true,
+          "detail": [
+            {
+              "mode": "standalone",
+              "portrait": "bottom",
+              "landscape": "top"
+            },
+            {
+              "mode": "webview",
+              "portrait": "bottom",
+              "landscape": "top"
+            }
+          ]
+        },
+        {
+          "name": "Keyboard viewport emulation hides rail, then restores it without losing input",
+          "passed": true,
+          "detail": {
+            "scope": "controlled visualViewport emulation; not a physical keyboard"
+          }
+        },
+        {
+          "name": "Desktop mouse dragging does not trigger swipe navigation",
+          "passed": true
+        },
+        {
+          "name": "Multi-touch and backgrounding cancel live preview without committing",
+          "passed": true,
+          "detail": {
+            "scope": "native browser touch + simulated visibility change"
+          }
+        },
+        {
+          "name": "Touch tablet supports swipe while rail stays at top",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "passed": 6
+    },
+    "intensive": {
+      "results": [
+        {
+          "name": "180 native retail entries and 120 POS entries reconcile independently in integer cents",
+          "passed": true,
+          "elapsedMs": 67565,
+          "evidence": {
+            "transactions": 300,
+            "unitsSold": 540,
+            "model": {
+              "sales": 5405.4,
+              "cashSales": 2162.1599999999994,
+              "nonCashSales": 3243.2400000000007,
+              "refunds": 0,
+              "netSales": 5405.4,
+              "received": 3843.360000000003,
+              "credit": 1562.0399999999981,
+              "closingDebt": 2062.0399999999972,
+              "closingPayable": 0,
+              "cashIn": 840.5999999999999,
+              "cashOut": 0,
+              "bankIn": 3002.7600000000016,
+              "bankOut": 0,
+              "expenses": 0,
+              "cogs": 1819.7999999999968,
+              "cogsReversed": 0,
+              "unitsSold": 540,
+              "unitsPurchased": 0,
+              "unitsAdjusted": 0,
+              "debtPaid": 0,
+              "supplierPaid": 0,
+              "customerOwedCash": 0,
+              "customerOwedBank": 0,
+              "byDiv": {
+                "pharmacy": {
+                  "sales": 0,
+                  "refunds": 0,
+                  "units": 0
+                },
+                "essentials": {
+                  "sales": 5405.400000000011,
+                  "refunds": 0,
+                  "units": 540
+                },
+                "unassigned": {
+                  "sales": 0,
+                  "refunds": 0,
+                  "units": 0
+                }
+              },
+              "retailXferIn": 0,
+              "retailXferOut": 0,
+              "todaySalesXferOut": 0,
+              "saleCashoutElectronic": 0,
+              "saleCashoutCash": 0,
+              "pos": {
+                "opening": 10000,
+                "electronicOpening": 10000,
+                "cashIn": 933.9999999999999,
+                "cashOut": 433.3999999999998,
+                "xferIn": 0,
+                "xferOut": 0,
+                "adjIn": 0,
+                "adjOut": 0,
+                "elecIn": 499.40000000000043,
+                "elecOut": 867.9999999999999,
+                "income": 131.99999999999972,
+                "incomeCash": 66.00000000000004,
+                "incomeElec": 66.00000000000004,
+                "count": 120,
+                "expectedCash": 10500.6,
+                "expectedElectronic": 9631.4
+              },
+              "closingDebtRaw": 2062.0399999999972,
+              "closingPayableRaw": 0,
+              "debtOverpaid": 0,
+              "payableOverpaid": 0,
+              "customerOwed": 0,
+              "expectedCash": 10840.6,
+              "expectedBank": 3002.7600000000016,
+              "retailSales": 5405.4,
+              "netCogs": 1819.7999999999968,
+              "grossProfit": 3585.600000000003,
+              "margin": 66.3336663336664,
+              "storeCash": 21341.2,
+              "earnings": 3717.6000000000026
+            }
+          }
+        },
+        {
+          "name": "Cash/bank expenses and external payments reduce only the intended fund",
+          "passed": true,
+          "elapsedMs": 1362,
+          "evidence": {
+            "sales": 5405.4,
+            "cashSales": 2162.1599999999994,
+            "nonCashSales": 3243.2400000000007,
+            "refunds": 0,
+            "netSales": 5405.4,
+            "received": 3843.360000000003,
+            "credit": 1562.0399999999981,
+            "closingDebt": 2062.0399999999972,
+            "closingPayable": 0,
+            "cashIn": 840.5999999999999,
+            "cashOut": 5,
+            "bankIn": 3002.7600000000016,
+            "bankOut": 7,
+            "expenses": 36,
+            "cogs": 1819.7999999999968,
+            "cogsReversed": 0,
+            "unitsSold": 540,
+            "unitsPurchased": 0,
+            "unitsAdjusted": 0,
+            "debtPaid": 0,
+            "supplierPaid": 0,
+            "customerOwedCash": 0,
+            "customerOwedBank": 0,
+            "byDiv": {
+              "pharmacy": {
+                "sales": 0,
+                "refunds": 0,
+                "units": 0
+              },
+              "essentials": {
+                "sales": 5405.400000000011,
+                "refunds": 0,
+                "units": 540
+              },
+              "unassigned": {
+                "sales": 0,
+                "refunds": 0,
+                "units": 0
+              }
+            },
+            "retailXferIn": 0,
+            "retailXferOut": 0,
+            "todaySalesXferOut": 0,
+            "saleCashoutElectronic": 0,
+            "saleCashoutCash": 0,
+            "pos": {
+              "opening": 10000,
+              "electronicOpening": 10000,
+              "cashIn": 933.9999999999999,
+              "cashOut": 433.3999999999998,
+              "xferIn": 0,
+              "xferOut": 0,
+              "adjIn": 0,
+              "adjOut": 0,
+              "elecIn": 499.40000000000043,
+              "elecOut": 867.9999999999999,
+              "income": 131.99999999999972,
+              "incomeCash": 66.00000000000004,
+              "incomeElec": 66.00000000000004,
+              "count": 120,
+              "expectedCash": 10500.6,
+              "expectedElectronic": 9631.4
+            },
+            "closingDebtRaw": 2062.0399999999972,
+            "closingPayableRaw": 0,
+            "debtOverpaid": 0,
+            "payableOverpaid": 0,
+            "customerOwed": 0,
+            "expectedCash": 10835.6,
+            "expectedBank": 2995.7600000000016,
+            "retailSales": 5405.4,
+            "netCogs": 1819.7999999999968,
+            "grossProfit": 3585.600000000003,
+            "margin": 66.3336663336664,
+            "storeCash": 21336.2,
+            "earnings": 3717.6000000000026
+          }
+        },
+        {
+          "name": "Linked partial refunds preserve original amounts and reject over-refunding",
+          "passed": true,
+          "elapsedMs": 873,
+          "evidence": {
+            "remainingRefundable": 1,
+            "transactions": 306
+          }
+        },
+        {
+          "name": "Cash moves between Retail and POS conserve total physical cash",
+          "passed": true,
+          "elapsedMs": 413,
+          "evidence": {
+            "physicalCash": 21346.21
+          }
+        },
+        {
+          "name": "Saving the same day repeatedly updates it once without double-counting Financial records",
+          "passed": true,
+          "elapsedMs": 3549,
+          "evidence": {
+            "savedDays": 1,
+            "bankBalance": 52995.76
+          }
+        },
+        {
+          "name": "Full Backup and fresh restore preserve the stressed ledger, stock and accounting totals",
+          "passed": true,
+          "elapsedMs": 3376,
+          "evidence": {
+            "products": 1,
+            "transactions": 308,
+            "savedDays": 1
+          }
+        },
+        {
+          "name": "POS negative, zero, non-finite and over-limit monetary values cannot be recorded",
+          "passed": true,
+          "elapsedMs": 1169,
+          "evidence": [
+            {
+              "amount": "-1",
+              "fee": "0",
+              "recorded": 0,
+              "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+            },
+            {
+              "amount": "0",
+              "fee": "0",
+              "recorded": 0,
+              "warning": "Enter an amount greater than zero."
+            },
+            {
+              "amount": "1e309",
+              "fee": "0",
+              "recorded": 0,
+              "warning": "Enter an amount greater than zero."
+            },
+            {
+              "amount": "1",
+              "fee": "-1",
+              "recorded": 0,
+              "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+            },
+            {
+              "amount": "1",
+              "fee": "10000000000000",
+              "recorded": 0,
+              "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+            },
+            {
+              "amount": "1",
+              "fee": "1e308",
+              "recorded": 0,
+              "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+            }
+          ]
+        },
+        {
+          "name": "Failed native POS storage write must not claim success or lose the entered transaction after reload",
+          "passed": true,
+          "elapsedMs": 1577,
+          "evidence": {
+            "toast": "\u26a0 Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+            "form": "25",
+            "liveTransactions": 0,
+            "status": {
+              "mode": "indexeddb",
+              "loaded": true,
+              "migration": {
+                "status": "complete",
+                "completedAt": "2026-10-14T12:42:26.976Z",
+                "source": "none",
+                "keys": [],
+                "schema": 8,
+                "recordCollections": true
+              },
+              "dbName": "roseachy_pwa_db",
+              "dbVersion": 8,
+              "recordCollections": true,
+              "revision": 5,
+              "stale": false,
+              "pending": 3,
+              "lastError": "Injected permanent draft storage failure"
+            },
+            "transactionsAfterReload": 0
+          }
+        },
+        {
+          "name": "Failed Financial vault write must remain absent after storage recovery and reload",
+          "passed": true,
+          "elapsedMs": 1792,
+          "evidence": {
+            "toast": "Not saved: Injected permanent vault storage failure",
+            "liveBalance": 5000000,
+            "liveEvents": 0,
+            "reloadedBalance": 5000000,
+            "reloadedEvents": 0
+          }
+        }
+      ],
+      "errors": [],
+      "metrics": {
+        "nativeSales": 180,
+        "nativePOS": 120,
+        "posValidation": [
+          {
+            "amount": "-1",
+            "fee": "0",
+            "recorded": 0,
+            "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+          },
+          {
+            "amount": "0",
+            "fee": "0",
+            "recorded": 0,
+            "warning": "Enter an amount greater than zero."
+          },
+          {
+            "amount": "1e309",
+            "fee": "0",
+            "recorded": 0,
+            "warning": "Enter an amount greater than zero."
+          },
+          {
+            "amount": "1",
+            "fee": "-1",
+            "recorded": 0,
+            "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+          },
+          {
+            "amount": "1",
+            "fee": "10000000000000",
+            "recorded": 0,
+            "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+          },
+          {
+            "amount": "1",
+            "fee": "1e308",
+            "recorded": 0,
+            "warning": "Enter valid nonnegative amounts, up to 1 trillion, including fees."
+          }
+        ],
+        "posStorageFailure": {
+          "toast": "\u26a0 Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+          "form": "25",
+          "liveTransactions": 0,
+          "status": {
+            "mode": "indexeddb",
+            "loaded": true,
+            "migration": {
+              "status": "complete",
+              "completedAt": "2026-10-14T12:42:26.976Z",
+              "source": "none",
+              "keys": [],
+              "schema": 8,
+              "recordCollections": true
+            },
+            "dbName": "roseachy_pwa_db",
+            "dbVersion": 8,
+            "recordCollections": true,
+            "revision": 5,
+            "stale": false,
+            "pending": 3,
+            "lastError": "Injected permanent draft storage failure"
+          },
+          "transactionsAfterReload": 0
+        },
+        "financialStorageFailure": {
+          "toast": "Not saved: Injected permanent vault storage failure",
+          "liveBalance": 5000000,
+          "liveEvents": 0,
+          "reloadedBalance": 5000000,
+          "reloadedEvents": 0
+        },
+        "passed": 9,
+        "failed": 0
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic data in Chromium; no user production database was supplied.",
+    "Actual Android APK compilation and physical WebView/device sharing were not tested.",
+    "Interrupted IndexedDB and fallback writes were injected; real device power loss was not tested.",
+    "Plaintext sync files remain readable and use a checksum, not sender authentication.",
+    "Concurrent supplier overpayment is rejected without partial writes; operators must review the original payments. Funding deficits preserve purchases and remain flagged until corrected."
+  ]
+}

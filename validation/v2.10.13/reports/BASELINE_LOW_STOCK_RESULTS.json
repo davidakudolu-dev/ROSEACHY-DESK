@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "name": "Saved purchase work on an automatic Low Stock list transfers without committing stock or cash",
+      "passed": false,
+      "elapsedMs": 3721,
+      "error": "AssertionError [ERR_ASSERTION]: Saved Low Stock purchase was not transferred\n    at /workspace/roseachy-v2.10.12-ember-review/tests/baseline-low-stock.cjs:52:902\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/baseline-low-stock.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/baseline-low-stock.cjs:52:2"
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "name": "Actual service-worker offline reload retains navigation and data",
+      "passed": true,
+      "detail": {
+        "cacheNames": [
+          "roseachy-shell-inventory-v27-2.10.13-market-sync-review-20261014"
+        ],
+        "offlineReload": true
+      }
+    },
+    {
+      "name": "Emulated standalone PWA and Android WebView startup retain responsive placement",
+      "passed": true,
+      "detail": [
+        {
+          "mode": "standalone",
+          "portrait": "bottom",
+          "landscape": "top"
+        },
+        {
+          "mode": "webview",
+          "portrait": "bottom",
+          "landscape": "top"
+        }
+      ]
+    },
+    {
+      "name": "Keyboard viewport emulation hides rail, then restores it without losing input",
+      "passed": true,
+      "detail": {
+        "scope": "controlled visualViewport emulation; not a physical keyboard"
+      }
+    },
+    {
+      "name": "Desktop mouse dragging does not trigger swipe navigation",
+      "passed": true
+    },
+    {
+      "name": "Multi-touch and backgrounding cancel live preview without committing",
+      "passed": true,
+      "detail": {
+        "scope": "native browser touch + simulated visibility change"
+      }
+    },
+    {
+      "name": "Touch tablet supports swipe while rail stays at top",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": 6
+}

@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "name": "Market deleted lists and their unfinished purchase details synchronize and restore on the other device",
+      "passed": false,
+      "elapsedMs": 3461,
+      "error": "AssertionError [ERR_ASSERTION]: Deleted active list missing on receiving phone\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:52:917\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:52:2"
+    },
+    {
+      "name": "Market session history and budget changes transfer without changing purchased stock or accounting",
+      "passed": false,
+      "elapsedMs": 2984,
+      "error": "AssertionError [ERR_ASSERTION]: Market session history missing\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:53:517\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:53:2"
+    },
+    {
+      "name": "A later edit after receiving a high-sequence event is causally ordered without a false conflict",
+      "passed": false,
+      "elapsedMs": 2842,
+      "error": "AssertionError [ERR_ASSERTION]: Sequential causal edit reported as concurrent conflict\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:54:726\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:54:2"
+    },
+    {
+      "name": "A merge uses one atomic commit for records, event IDs and receipt metadata",
+      "passed": false,
+      "elapsedMs": 2565,
+      "error": "AssertionError [ERR_ASSERTION]: Merge split across durable commits\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:55:769\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:55:2"
+    },
+    {
+      "name": "An exhausted market advance rejects a larger purchase without partial stock, history or cash changes",
+      "passed": true,
+      "elapsedMs": 2621,
+      "evidence": {
+        "partialPurchaseRejected": true,
+        "availableFunds": 20
+      }
+    },
+    {
+      "name": "Two devices spending the same advance retain purchases and flag the resulting funding shortage",
+      "passed": false,
+      "elapsedMs": 3080,
+      "error": "AssertionError [ERR_ASSERTION]: Overspent advance is absent from merge preview\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:57:625\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:57:2"
+    },
+    {
+      "name": "PIN session expiry displays an unlock form in the already-open Smart Sync screen",
+      "passed": false,
+      "elapsedMs": 866,
+      "error": "AssertionError [ERR_ASSERTION]: Expired session leaves both panels hidden\n    at /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:58:289\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/deep-review.cjs:58:2"
+    },
+    {
+      "name": "Selected recipient exports only unacknowledged events and duplicate receipts do not add stock",
+      "passed": true,
+      "elapsedMs": 3375,
+      "evidence": {
+        "recipientMissingEvents": 0,
+        "stock": 74
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

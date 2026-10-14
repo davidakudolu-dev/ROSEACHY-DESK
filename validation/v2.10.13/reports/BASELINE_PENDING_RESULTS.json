@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "name": "Pending plaintext exchange is encrypted locally and resumes after locking without leaking bank text in a Full Backup",
+      "passed": false,
+      "elapsedMs": 3534,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(pending.sealedFile&&!pending.file)\n\n    at /workspace/roseachy-v2.10.12-ember-review/tests/baseline-pending.cjs:53:983\n    at async check (/workspace/roseachy-v2.10.12-ember-review/tests/baseline-pending.cjs:18:166)\n    at async /workspace/roseachy-v2.10.12-ember-review/tests/baseline-pending.cjs:53:2"
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

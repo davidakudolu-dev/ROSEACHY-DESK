@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "name": "Independent prepared Low Stock drafts for the same product survive exchange and restart as separate records",
+      "passed": true,
+      "elapsedMs": 5028,
+      "evidence": {
+        "preparedDrafts": 2,
+        "quantities": [
+          12,
+          24
+        ],
+        "stockUnaffected": 50
+      }
+    },
+    {
+      "name": "Fallback-storage merge rolls back an interrupted write then applies a purchase once after retry",
+      "passed": true,
+      "elapsedMs": 3266,
+      "evidence": {
+        "fallbackRollback": true,
+        "retryAndRestartDedupe": true,
+        "stock": 74
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

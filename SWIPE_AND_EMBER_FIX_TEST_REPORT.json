@@ -1,0 +1,80 @@
+{
+  "errors": [],
+  "tests": [
+    {
+      "active": "Stock",
+      "tracking": false,
+      "busy": false,
+      "swipeLayers": 0,
+      "visible": [
+        "tabStock"
+      ],
+      "blank": "",
+      "label": "left Tx->Stock"
+    },
+    {
+      "active": "Tx",
+      "tracking": false,
+      "busy": false,
+      "swipeLayers": 0,
+      "visible": [
+        "tabTx"
+      ],
+      "blank": "",
+      "label": "right Stock->Tx"
+    },
+    {
+      "active": "Tx",
+      "tracking": false,
+      "busy": false,
+      "swipeLayers": 0,
+      "visible": [
+        "tabTx"
+      ],
+      "blank": "",
+      "label": "vertical remains Tx"
+    },
+    {
+      "label": "8 repeated bidirectional swipes",
+      "passed": true
+    },
+    {
+      "label": "tap does not force navigation redraw",
+      "passed": true
+    },
+    {
+      "label": "sync engine panel retained",
+      "passed": true
+    }
+  ],
+  "colors": {
+    "light-idle": {
+      "color": "rgb(30, 34, 61)",
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)",
+      "mode": "light",
+      "contrast": 13.43
+    },
+    "light-hover": {
+      "color": "rgb(30, 34, 61)",
+      "fg": "rgb(30, 34, 61)",
+      "bg": "rgb(255, 236, 207)",
+      "mode": "light",
+      "contrast": 13.43
+    },
+    "dark-idle": {
+      "color": "rgb(255, 255, 255)",
+      "fg": "rgb(255, 255, 255)",
+      "bg": "rgb(30, 34, 61)",
+      "mode": "dark",
+      "contrast": 15.54
+    },
+    "dark-hover": {
+      "color": "rgb(19, 21, 38)",
+      "fg": "rgb(19, 21, 38)",
+      "bg": "rgb(245, 196, 158)",
+      "mode": "dark",
+      "contrast": 11.41
+    }
+  }
+}

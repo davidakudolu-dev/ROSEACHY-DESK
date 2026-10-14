@@ -1,3 +1,5 @@
+> Historical report: these results were recorded for the original password-encrypted v2.10.12 build. The password-free exchange update was separately syntax-checked and passed targeted codec tests; full browser/device merge regression remains unverified.
+
 # Smart Sync & Merge — v2.10.12 validation
 
 Verified on 14 October 2026 using synthetic isolated browser profiles, Chromium and Playwright. **125 browser scenario groups and 11 JavaScript syntax checks passed**, with no reported page errors. The final backup suite was rerun after restarting a stalled test server. The engine's earlier one failure was an assertion expecting a wrong-business error before the newer enrollment guard; the assertion now checks the precise enrollment rejection and preserves the unchanged-data check. Platform fixtures wait for completed hydration before comparing migrated records.

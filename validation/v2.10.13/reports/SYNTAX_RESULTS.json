@@ -1,0 +1,46 @@
+[
+  {
+    "script": "inline 0",
+    "passed": true
+  },
+  {
+    "script": "inline 1",
+    "passed": true
+  },
+  {
+    "script": "inline 2",
+    "passed": true
+  },
+  {
+    "script": "inline 3",
+    "passed": true
+  },
+  {
+    "script": "inline 4",
+    "passed": true
+  },
+  {
+    "script": "inline 5",
+    "passed": true
+  },
+  {
+    "script": "inline 6",
+    "passed": true
+  },
+  {
+    "script": "inline 7",
+    "passed": true
+  },
+  {
+    "script": "sw.js",
+    "passed": true
+  },
+  {
+    "script": "js/pwa.js",
+    "passed": true
+  },
+  {
+    "script": "js/android-sync-files.js",
+    "passed": true
+  }
+]
