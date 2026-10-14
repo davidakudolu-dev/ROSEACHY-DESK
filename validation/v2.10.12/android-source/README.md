@@ -1,0 +1,14 @@
+# Existing Android Studio WebView integration
+
+This is source for the existing APK project, not a compiled APK. The uploaded ZIP contains no Android Studio project, Gradle configuration, signing configuration or physical APK. The Kotlin reference therefore has not been compiled or device-tested here. Preserve existing Activity and WebChromeClient behavior when integrating it.
+
+1. Copy the complete application assets into `app/src/main/assets/`. Use the index.html, manifest, JS helpers and icons from this release, not an earlier index.
+2. Use AndroidX `WebViewAssetLoader` and a secure local HTTPS origin (for example `https://appassets.androidplatform.net/` with an `AssetsPathHandler` at `/`). Route all bundled paths consistently, including `/icons/` and `/js/`. Keep this origin stable for IndexedDB. Existing projects using `/assets/` must adapt absolute asset paths or the loader path consistently.
+3. Keep JavaScript and DOM storage enabled. Web Crypto requires a secure context. Do not enable universal file access or disable origin/TLS checks. Serve assets locally; routine sync needs no Internet.
+4. Adapt `SmartSyncFileBridge.kt` to the existing package. Instantiate it during Activity.onCreate, before the Activity reaches STARTED, and add it as `AndroidSyncFileBridge` using addJavascriptInterface. Bind this interface only to trusted bundled app content. Prevent untrusted pages/frames from running with it; open external URLs in the system browser.
+5. Merge `bridge.onShowFileChooser(callback, params)` into the existing WebChromeClient.onShowFileChooser. It opens SAF JSON documents; do not remove other existing chooser behaviors.
+6. The bundled optional JS adapter converts protected sync JSON to UTF-8/base64, calls the bridge, and waits for its callback. The bridge writes to the user-selected document and re-reads the exact bytes before reporting success. Cancelled/failed saves reject the JS Promise. The separate recovery-backup read-back step remains mandatory.
+7. The application disables browser service-worker registration when this native-assets bridge is present; bundled assets remain offline. The adapter also connects JSON exports from the established RoseachyFiles helper to this bridge, so both Full Backup buttons and Smart Sync use the same native save/read-back contract. Preserve any other existing downloader behaviors.
+8. After saving, use Files/Downloads → Share for Quick Share or Bluetooth. Import on the receiving device through Smart Sync's JSON chooser. Android's operating-system sharing transport is not simulated by JavaScript tests.
+
+Test on the actual APK: Financial PIN gating, download cancellation, JSON read-back, Quick Share/Bluetooth, content-URI picker access, process restart, large files and repeated PWA↔APK transfers. Verify the backup downloader before enrolling any production device. Browser tests and a mocked bridge callback do not prove APK compatibility.

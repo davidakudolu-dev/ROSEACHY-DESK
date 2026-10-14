@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "name": "Standalone HTML renders actual application and protected Sync UI with embedded assets",
+      "passed": true,
+      "evidence": {
+        "externalDeploymentAssetsRequired": false,
+        "servedBrowserTest": true,
+        "physicalFileOpenNotTested": true
+      }
+    }
+  ],
+  "errors": []
+}

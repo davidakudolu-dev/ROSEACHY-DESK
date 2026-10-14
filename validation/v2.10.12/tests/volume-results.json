@@ -1,0 +1,93 @@
+{
+  "results": [
+    {
+      "name": "Large dataset loads 500 products, 90 saved days, 9010 transactions and 1000 notes",
+      "passed": true,
+      "elapsedMs": 24137,
+      "evidence": {
+        "stock": 500,
+        "saved": 90,
+        "transactions": 9010,
+        "notes": 1000,
+        "seedMs": 22863,
+        "fixtureScope": "Seeded performance/history dataset; native stock accounting is tested separately."
+      }
+    },
+    {
+      "name": "Analytics totals match independently generated values across all 90 saved days and live work",
+      "passed": true,
+      "elapsedMs": 443,
+      "evidence": {
+        "sales": 270370.0999999939,
+        "profit": 179346.40000000823,
+        "cogs": 91023.70000000317,
+        "units": 27010,
+        "days": 91,
+        "transactions": 9010,
+        "analyticsMs": 443
+      }
+    },
+    {
+      "name": "Financial ledger reconciles 4505 bank-paid sales against its anchor without duplicating saved/live entries",
+      "passed": true,
+      "elapsedMs": 984,
+      "evidence": {
+        "balance": 18518505,
+        "rows": 4505,
+        "unique": 4505,
+        "rendered": 80,
+        "financialLedgerMs": 339
+      }
+    },
+    {
+      "name": "Large inventory, notes and saved days keep bounded DOM lists and searchable records",
+      "passed": true,
+      "elapsedMs": 4061,
+      "evidence": {
+        "stockRows": 160,
+        "noteCards": 0,
+        "savedRows": 30,
+        "pagedUiMs": 4061
+      }
+    },
+    {
+      "name": "Eight themes, both color modes and seven viewport sizes preserve large business datasets",
+      "passed": true,
+      "elapsedMs": 7867,
+      "evidence": {
+        "themeModeCombinations": 16,
+        "viewports": 7
+      }
+    },
+    {
+      "name": "Large database reload preserves all records, then Full Backup round-trips to a fresh profile",
+      "passed": true,
+      "elapsedMs": 32079,
+      "evidence": {
+        "backupBytes": 8678327,
+        "exportMs": 5532,
+        "restoreMs": 15610
+      }
+    },
+    {
+      "name": "User-entered product, request and note HTML is displayed as text without execution",
+      "passed": true,
+      "elapsedMs": 1467,
+      "evidence": {
+        "literalMarkupEscaped": true
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "seedMs": 22863,
+    "analyticsMs": 443,
+    "financialLedgerMs": 339,
+    "pagedUiMs": 4061,
+    "largeBackupMs": 5532,
+    "largeBackupBytes": 8678327,
+    "largeRestoreMs": 15610
+  },
+  "passed": 7,
+  "failed": 0
+}

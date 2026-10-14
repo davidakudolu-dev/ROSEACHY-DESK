@@ -1,0 +1,143 @@
+{
+  "results": [
+    {
+      "name": "Warm saved-day backup restores without blocking on generated storage metadata",
+      "passed": true,
+      "elapsedMs": 12090,
+      "evidence": {
+        "warmSavedRestore": {
+          "restored": true,
+          "toast": "✔ Full Backup restored and verified: 1 products, 1 saved days. Recovery copy retained.",
+          "differences": [
+            {
+              "path": ".0.businessKey",
+              "actual": "roseachy"
+            }
+          ]
+        },
+        "coldSavedRestore": {
+          "restored": true,
+          "toast": "✔ Full Backup restored and verified: 1 products, 1 saved days. Recovery copy retained.",
+          "warmExportHasBusinessKey": false,
+          "coldExportHasBusinessKey": true
+        },
+        "slowSettingsSave": {
+          "delayMs": 900,
+          "requested": {
+            "pharmacyMarkup": 10.5,
+            "essentialsMarkup": 30
+          },
+          "actual": {
+            "version": 1,
+            "pharmacyMarkup": 10.5,
+            "essentialsMarkup": 30
+          }
+        },
+        "marketPaymentStorageFailure": {
+          "toast": "⚠ Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+          "liveTransactions": 1,
+          "livePayments": 0,
+          "livePayable": 100,
+          "reloadedTransactions": 1,
+          "reloadedPayments": 0,
+          "reloadedPayable": 100
+        }
+      }
+    },
+    {
+      "name": "Linked over-refund and source-sale deletion safeguards retain original stock and transactions",
+      "passed": true,
+      "elapsedMs": 4006,
+      "evidence": {
+        "overRefundRejected": true,
+        "linkedSaleDeletionRejected": true,
+        "remainingRefundable": 1
+      }
+    },
+    {
+      "name": "Normal sequential user markup changes preserve default/custom/manual pricing and saved transactions",
+      "passed": true,
+      "elapsedMs": 3377,
+      "evidence": {
+        "defaultPrices": [
+          110.5,
+          130
+        ],
+        "customPrice": 155,
+        "manualPrice": 777,
+        "oldSale": 130
+      }
+    },
+    {
+      "name": "User markup changes during a slow save are eventually committed rather than silently lost",
+      "passed": true,
+      "elapsedMs": 8538,
+      "evidence": {
+        "delayMs": 900,
+        "requested": {
+          "pharmacyMarkup": 10.5,
+          "essentialsMarkup": 30
+        },
+        "actual": {
+          "version": 1,
+          "pharmacyMarkup": 10.5,
+          "essentialsMarkup": 30
+        }
+      }
+    },
+    {
+      "name": "Market supplier payment storage failure must not claim a payment was saved then lose it on reload",
+      "passed": true,
+      "elapsedMs": 5232,
+      "evidence": {
+        "toast": "⚠ Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+        "liveTransactions": 1,
+        "livePayments": 0,
+        "livePayable": 100,
+        "reloadedTransactions": 1,
+        "reloadedPayments": 0,
+        "reloadedPayable": 100
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "warmSavedRestore": {
+      "restored": true,
+      "toast": "✔ Full Backup restored and verified: 1 products, 1 saved days. Recovery copy retained.",
+      "differences": [
+        {
+          "path": ".0.businessKey",
+          "actual": "roseachy"
+        }
+      ]
+    },
+    "coldSavedRestore": {
+      "restored": true,
+      "toast": "✔ Full Backup restored and verified: 1 products, 1 saved days. Recovery copy retained.",
+      "warmExportHasBusinessKey": false,
+      "coldExportHasBusinessKey": true
+    },
+    "slowSettingsSave": {
+      "delayMs": 900,
+      "requested": {
+        "pharmacyMarkup": 10.5,
+        "essentialsMarkup": 30
+      },
+      "actual": {
+        "version": 1,
+        "pharmacyMarkup": 10.5,
+        "essentialsMarkup": 30
+      }
+    },
+    "marketPaymentStorageFailure": {
+      "toast": "⚠ Phone storage could not save your work. Check free space, retry, and keep an external backup.",
+      "liveTransactions": 1,
+      "livePayments": 0,
+      "livePayable": 100,
+      "reloadedTransactions": 1,
+      "reloadedPayments": 0,
+      "reloadedPayable": 100
+    }
+  }
+}

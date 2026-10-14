@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "name": "Market fixture: 500 inventory products, two independent supplier lists and 200 ready purchases",
+      "passed": true,
+      "elapsedMs": 3968,
+      "evidence": {
+        "products": 500,
+        "lists": 2,
+        "readyPurchases": 200
+      }
+    },
+    {
+      "name": "Applying 100 packed Market purchases updates only the chosen supplier list, stock and payable",
+      "passed": true,
+      "elapsedMs": 2787,
+      "evidence": {
+        "applyMs": 1874,
+        "transactions": 101,
+        "unitsPurchased": 2500,
+        "outstanding": 6325
+      }
+    },
+    {
+      "name": "Supplier overpayment and wrong-business-date payment are rejected without changes",
+      "passed": true,
+      "elapsedMs": 1506,
+      "evidence": {
+        "overpaymentRejected": true,
+        "wrongDateRejected": true
+      }
+    },
+    {
+      "name": "External, business-bank and business-cash supplier payments reconcile the full purchase exactly once",
+      "passed": true,
+      "elapsedMs": 2962,
+      "evidence": {
+        "transactions": 104,
+        "bankMovement": -4100,
+        "retailCash": 97675,
+        "payable": 0
+      }
+    },
+    {
+      "name": "Mixed payment methods cannot be applied until a single Paid Via method is chosen",
+      "passed": true,
+      "elapsedMs": 3629,
+      "evidence": {
+        "transactions": 204,
+        "history": 200,
+        "retailCash": 89250
+      }
+    },
+    {
+      "name": "Financial balance agrees with supplier bank payments; complete Market restore preserves purchases and packs",
+      "passed": true,
+      "elapsedMs": 20017,
+      "evidence": {
+        "products": 500,
+        "marketHistory": 200,
+        "bankBalance": 45900
+      }
+    },
+    {
+      "name": "Settings repricing affects default markup only, preserving manual/custom prices and historical sales",
+      "passed": true,
+      "elapsedMs": 2373,
+      "evidence": {
+        "prices": [
+          {
+            "id": "default-pharm",
+            "price": 110.5
+          },
+          {
+            "id": "default-ess",
+            "price": 130
+          },
+          {
+            "id": "custom",
+            "price": 155
+          },
+          {
+            "id": "manual",
+            "price": 777
+          }
+        ],
+        "originalSale": 130
+      }
+    },
+    {
+      "name": "500 quantity-pricing combinations match independent bundle/remainder arithmetic",
+      "passed": true,
+      "elapsedMs": 1745,
+      "evidence": {
+        "combinations": 500
+      }
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "bulkMarketApplyMs": 1874
+  },
+  "passed": 8,
+  "failed": 0
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "file": "inline script 0",
+    "passed": true
+  },
+  {
+    "file": "inline script 1",
+    "passed": true
+  },
+  {
+    "file": "inline script 2",
+    "passed": true
+  },
+  {
+    "file": "inline script 3",
+    "passed": true
+  },
+  {
+    "file": "inline script 4",
+    "passed": true
+  },
+  {
+    "file": "inline script 5",
+    "passed": true
+  },
+  {
+    "file": "inline script 6",
+    "passed": true
+  },
+  {
+    "file": "inline script 7",
+    "passed": true
+  },
+  {
+    "file": "sw.js",
+    "passed": true
+  },
+  {
+    "file": "js/pwa.js",
+    "passed": true
+  },
+  {
+    "file": "js/android-sync-files.js",
+    "passed": true
+  }
+]

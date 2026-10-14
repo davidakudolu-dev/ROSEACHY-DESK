@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "name": "Smart Sync UI authenticates, downloads a real recovery file, reads it back and locks on close",
+      "passed": true,
+      "elapsedMs": 1645,
+      "evidence": {
+        "actualBrowserDownload": true,
+        "readback": true,
+        "reentryRequiresPIN": true
+      }
+    },
+    {
+      "name": "Populated schema-7 database migrates to schema 8 without changing stock, notes or sales",
+      "passed": true,
+      "elapsedMs": 934,
+      "evidence": {
+        "from": 7,
+        "to": 8,
+        "recordsPreserved": true
+      }
+    },
+    {
+      "name": "Android JS bridge contract preserves UTF-8 and rejects cancelled/failed saves for backup and sync",
+      "passed": true,
+      "elapsedMs": 446,
+      "evidence": {
+        "mockedBridgeOnly": true,
+        "utf8Verified": true,
+        "cancelAndFailureRejected": true,
+        "notAnAPKTest": true
+      }
+    }
+  ],
+  "errors": []
+}

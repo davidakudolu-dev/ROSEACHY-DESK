@@ -1,0 +1,27 @@
+{
+  "exports": [
+    {
+      "file": "Roseachy_v2_10_12_Smart_Sync_Merge_Cloudflare_PWA.zip",
+      "bytes": 394457,
+      "sha256": "8b72499088bb1650795546a98da407853d251264511f46e6ca1d3906786dfe6b",
+      "entries": 46
+    },
+    {
+      "file": "Roseachy_v2_10_12_Android_WebView_Integration_Source.zip",
+      "bytes": 399644,
+      "sha256": "e54bb8eddfee03b1c27e4642ed54464613ee4760009ce81bfb0b199343606a0f",
+      "entries": 48
+    },
+    {
+      "file": "Roseachy_v2_10_12_Smart_Sync_Preview.html",
+      "bytes": 1183088,
+      "sha256": "d52304440385b4ae6b6333009fda7db3d495e37a643c94995ecd47aa9af1dc37"
+    }
+  ],
+  "allOriginalFilesRetained": 41,
+  "modifiedOriginalFiles": [
+    "index.html",
+    "sw.js",
+    "js/pwa.js"
+  ]
+}

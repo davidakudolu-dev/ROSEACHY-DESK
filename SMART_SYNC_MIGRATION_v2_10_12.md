@@ -1,0 +1,15 @@
+# Migration, identity and permanent deduplication
+
+The uploaded v2.10.11 application is preserved unchanged in original/. This candidate retains every original deployment file. Existing UI desks, local PINs, reports and backup operations remain; Smart Sync adds protected entry points and a separate merge workflow.
+
+IndexedDB upgrades from schema 7 to 8 by adding synchronization and syncEventRecords stores. Existing retail, Market and Financial stores remain. Existing UUIDs are retained. An installation DeviceID is generated locally; BusinessID is agreed at reconciliation. Neither historical depth nor timestamps confer authority. Full Backup includes sync state/events/checkpoint and pending work, but omits installation identity and rebuildable shadows. Local sequence high-water marks prevent event-ID reuse after an older restore.
+
+New durable business commits and their event ledger are saved atomically, including stock batch deltas, record revisions and private financial changes. Events carry device sequence and predecessor; missing dependencies and changed content under an existing ID are rejected. Imported accepted events, tombstones and acknowledgement/frontier metadata persist across restart and repeated exchange. Short-lived adjustment display cleanup does not erase permanent synchronization history.
+
+A checkpoint separates accounted history from new movements. Shared/exclusive old records are preserved without reapplying their financial or physical effects. Ambiguous legacy matches, divergent day openings, pack definitions and transaction edits require review. Historical bank movements, source anchors and reviews are retained encrypted and accessible through preserved bank history; incomplete old running balances require supervised review rather than an invented opening balance. Current bank reporting starts from the explicitly approved bank checkpoint.
+
+Incremental Financial movements are locally encrypted with the device vault key and reprotected for the shared encrypted transfer. Local PIN wrappers and recovery credentials are not copied through sync. Financial PIN authorization and shared-file passphrase encryption serve separate purposes. Outer-file checksums alone are not authentication; AES-GCM protects integrity and confidentiality of the payload.
+
+Import merges supported records and effects. Full Backup restore replaces a prior state. Never use either as a substitute for the other. Keep external verified copies; production reconciliation requires responsible approval of physical stock, money, receivables, liabilities, pending purchases and advance balances. A browser simulation cannot certify that a real business's historical balances are correct.
+
+Deployment: extract at the Pages root with index.html, manifest.json, sw.js, js/, icons/, _headers and _redirects. The standalone HTML is a portable download for local viewing, with no service worker; the complete ZIP is the deployable offline PWA. Android source is an integration reference, not a compiled APK; its read-back callback and operating-system sharing require testing in the existing Android Studio project.
